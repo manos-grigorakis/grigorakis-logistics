@@ -7,7 +7,7 @@ export function Navbar() {
   const links = ["υπηρεσιες", "καλυψη", "στολος", "διαδικασια"];
 
   return (
-    <nav className="fixed top-0 z-20 w-full">
+    <nav className="fixed top-0 z-50 w-full bg-background">
       <div className="p-4 mx-auto max-w-7xl">
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8">
@@ -66,7 +66,7 @@ export function Navbar() {
 
       {/* Mobile dropdown */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+        className={`overflow-hidden transition-all duration-300 bg-background ease-in-out md:hidden ${
           isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -74,7 +74,7 @@ export function Navbar() {
           <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
             {links.map((l) => (
               <li key={l}>
-                <a href="#" className="block py-2 hover:text-orange-500">
+                <a href="#" className="block py-2">
                   {l}
                 </a>
               </li>
