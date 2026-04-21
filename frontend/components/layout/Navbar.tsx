@@ -8,7 +8,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 z-20 w-full">
-      <div className="p-4 mx-auto max-w-7xl ">
+      <div className="p-4 mx-auto max-w-7xl">
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8">
           {/* Logo */}
