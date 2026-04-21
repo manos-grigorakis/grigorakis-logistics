@@ -1,13 +1,63 @@
 @import "tailwindcss";
 
 :root {
+  /* Base Colors */
   --background: #f2ede4;
   --foreground: #0d0d0f;
+  --ruler: #cccccc;
+
+  /* Primary */
+  --primary-50: #fdf3f0;
+  --primary-100: #fbd6cc;
+  --primary-200: #f7b3a3;
+  --primary-300: #f38f7a;
+  --primary-400: #ee6c52;
+  --primary-500: #d94a1f;
+  --primary-600: #b83e1a;
+  --primary-700: #973315;
+  --primary-800: #762710;
+  --primary-900: #551c0b;
+
+  /* Accent */
+  --accent-50: #fff8e8;
+  --accent-100: #fdecc2;
+  --accent-200: #fbdc99;
+  --accent-300: #f9cc70;
+  --accent-400: #f7bc47;
+  --accent-500: #f4a020;
+  --accent-600: #d8891b;
+  --accent-700: #bc7316;
+  --accent-800: #a05c12;
+  --accent-900: #84460d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-ruler: var(--ruler);
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
