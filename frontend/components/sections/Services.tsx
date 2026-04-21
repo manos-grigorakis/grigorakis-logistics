@@ -53,7 +53,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="px-4 py-24 text-white bg-foreground">
+    <section id="services" className="px-4 py-24 text-white bg-foreground">
       <div className="max-w-6xl mx-auto">
         <span className="text-xs tracking-widest uppercase text-white/40">
           τι κάνουμε

@@ -4,7 +4,24 @@ import { useState } from "react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const links = ["υπηρεσιες", "καλυψη", "στολος", "διαδικασια"];
+  const links: { name: string; section: string }[] = [
+    {
+      name: "υπηρεσιες",
+      section: "services",
+    },
+    {
+      name: "καλυψη",
+      section: "coverage",
+    },
+    {
+      name: "στολος",
+      section: "fleet",
+    },
+    {
+      name: "διαδικασια",
+      section: "process",
+    },
+  ];
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-background">
@@ -19,9 +36,12 @@ export function Navbar() {
           {/* Links */}
           <ul className="flex items-center justify-center gap-8 text-xs font-medium uppercase">
             {links.map((l) => (
-              <li key={l}>
-                <a href="#" className="block py-2 hover:text-orange-500">
-                  {l}
+              <li key={l.name}>
+                <a
+                  href={"#" + l.section}
+                  className="block py-2 hover:text-orange-500"
+                >
+                  {l.name}
                 </a>
               </li>
             ))}
@@ -73,9 +93,9 @@ export function Navbar() {
         <div className="px-4 pb-4 mx-auto max-w-7xl">
           <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
             {links.map((l) => (
-              <li key={l}>
-                <a href="#" className="block py-2">
-                  {l}
+              <li key={l.name}>
+                <a href={"#" + l.section} className="block py-2">
+                  {l.name}
                 </a>
               </li>
             ))}
