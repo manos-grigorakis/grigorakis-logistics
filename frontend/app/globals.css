@@ -76,3 +76,8 @@ h5,
 h6 {
   font-family: var(--font-barlow-condensed), sans-serif;
 }
+
+::selection {
+  color: white;
+  background: var(--primary-500);
+}
