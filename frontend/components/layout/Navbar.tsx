@@ -94,7 +94,11 @@ export function Navbar() {
           <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
             {links.map((l) => (
               <li key={l.name}>
-                <a href={"#" + l.section} className="block py-2">
+                <a
+                  href={"#" + l.section}
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="block py-2"
+                >
                   {l.name}
                 </a>
               </li>
