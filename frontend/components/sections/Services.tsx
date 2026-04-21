@@ -82,7 +82,7 @@ export default function Services() {
                   </span>
                 </div>
 
-                <h4 className="mt-5 text-lg font-medium capitalize">
+                <h4 className="mt-5 text-lg font-semibold capitalize">
                   {item.title}
                 </h4>
                 <p className="mt-2 text-sm leading-relaxed text-ruler">

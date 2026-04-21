@@ -8,6 +8,7 @@ const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
   axes: ["opsz"],
 });
+
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
   subsets: ["latin"],
