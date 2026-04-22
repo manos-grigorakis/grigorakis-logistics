@@ -41,7 +41,7 @@ export default function Process() {
           διαδικασια
         </span>
 
-        <h2 className="mt-2 mb-12 text-4xl font-semibold uppercase">
+        <h2 className="mt-2 mb-24 text-4xl font-semibold uppercase">
           πως <span className="text-primary-500">δουλευουμε</span>
         </h2>
 
