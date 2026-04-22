@@ -42,7 +42,7 @@ export default function Trust() {
   ];
   return (
     <section className="py-10">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4">
         <span className="text-xs tracking-widest uppercase text-foreground/60">
           μας εμπιστεύονται
         </span>
