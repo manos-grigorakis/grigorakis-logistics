@@ -21,6 +21,10 @@ export function Navbar() {
       name: "διαδικασια",
       section: "process",
     },
+    {
+      name: "ερωτησεις",
+      section: "faqs",
+    },
   ];
 
   return (

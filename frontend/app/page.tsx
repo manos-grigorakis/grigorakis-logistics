@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import Trust from "@/components/sections/Trust";
 import Process from "@/components/sections/Process";
 import Services from "@/components/sections/Services";
+import Faq from "@/components/sections/Faq";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <Coverage />
       <Process />
+      <Faq />
     </>
   );
 }
