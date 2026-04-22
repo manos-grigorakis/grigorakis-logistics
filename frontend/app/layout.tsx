@@ -6,7 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin", "latin-ext"],
-  axes: ["opsz"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const barlowCondensed = Barlow_Condensed({
