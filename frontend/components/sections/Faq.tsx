@@ -4,7 +4,7 @@ import { useState } from "react";
 import { LuArrowDown } from "react-icons/lu";
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs: { question: string; answer: string }[] = [
     {
