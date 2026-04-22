@@ -29,8 +29,11 @@ export function Navbar() {
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8">
           {/* Logo */}
-          <a href="#" className="text-xl font-semibold whitespace-nowrap">
-            Grigorakis
+          <a
+            href="#"
+            className="text-xl font-semibold uppercase whitespace-nowrap"
+          >
+            γρηγορακης
           </a>
 
           {/* Links */}
@@ -58,8 +61,8 @@ export function Navbar() {
 
         {/* Mobile */}
         <div className="flex items-center justify-between md:hidden">
-          <a href="#" className="text-xl font-semibold">
-            Grigorakis
+          <a href="#" className="text-xl font-semibold uppercase">
+            γρηγορακης
           </a>
 
           <button
