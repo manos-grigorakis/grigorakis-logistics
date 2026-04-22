@@ -69,24 +69,27 @@ export function Navbar() {
             γρηγορακης
           </a>
 
+          {/* Menu & Close Icon */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            type="button"
-            className="inline-flex items-center justify-center w-10 h-10 p-2"
-            aria-label="Open main menu"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="relative w-10 h-10"
+            aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeWidth={2}
-                d="M5 7h14M5 12h14M5 17h14"
-              />
-            </svg>
+            <span
+              className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-300 ${
+                isOpen ? "top-1/2 rotate-45" : "top-3"
+              }`}
+            />
+            <span
+              className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-300 ${
+                isOpen ? "opacity-0" : "top-1/2"
+              }`}
+            />
+            <span
+              className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-300 ${
+                isOpen ? "top-1/2 -rotate-45" : "bottom-3"
+              }`}
+            />
           </button>
         </div>
       </div>
