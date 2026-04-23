@@ -1,4 +1,7 @@
+"use client";
+
 import { navLinks } from "@/data/nav-links";
+import { motion } from "motion/react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,15 +18,33 @@ export default function Footer() {
     <footer className="w-full px-4 py-20 text-white bg-foreground">
       {/* Footer message */}
       <div className="mb-16 text-center">
-        <p className="text-4xl font-bold text-white uppercase">
+        <motion.p
+          className="text-4xl font-bold text-white uppercase"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           κινουμαστε <span className="text-primary-500">μαζι</span>
-        </p>
-        <p className="mt-3 text-sm tracking-widest uppercase text-white/40">
+        </motion.p>
+        <motion.p
+          className="mt-3 text-sm tracking-widest uppercase text-white/40"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           25+ Χρόνια Εμπειρίας · Πανελλαδική Κάλυψη · Αξιόπιστες Παραδόσεις
-        </p>
+        </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8">
+      <motion.div
+        className="grid grid-cols-1 gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         {/* Brand */}
         <div>
           <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
@@ -109,7 +130,7 @@ export default function Footer() {
           <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 20:00</p>
           <div></div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Divider */}
       <div className="h-px max-w-6xl mx-auto mt-16 bg-white/10"></div>
