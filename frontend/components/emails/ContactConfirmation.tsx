@@ -72,7 +72,7 @@ export default function ContactConfirmation({
               {/* Summary box */}
               <Section className="px-6 py-5 my-6 bg-background">
                 <Text className="m-0 mb-3 text-xs tracking-widest text-gray-400 uppercase">
-                  Σύνοψη αιτήματος
+                  Συνοψη αιτηματος
                 </Text>
                 <Hr className="my-2 border-gray-200" />
                 <Row>

@@ -30,7 +30,17 @@ export default function Footer() {
             Γρηγοράκης <span className="text-primary-500">Logistics</span>
           </h5>
           <div className="text-sm leading-relaxed text-white/50">
-            <p>Μέλος του Δικτύου Μεταφορών Γρηγοράκης</p>
+            <p>
+              Μέλος του{" "}
+              <a
+                href="https://grigorakis-transport.gr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-500 transition-colors"
+              >
+                Δικτύου Μεταφορών Γρηγοράκης
+              </a>
+            </p>
             <p className="mt-2">Υποκ. Αθήνα</p>
             <p>Ασπρόπυργος, Θέση Κούταλα</p>
             <p>Αττική, 19300</p>

@@ -58,13 +58,13 @@ export default function ContactNotification({
                 Νέο αίτημα επικοινωνίας
               </Heading>
               <Text className="m-0 mb-6 text-xs tracking-widest text-gray-400 uppercase">
-                Υποβλήθηκε μέσω της φόρμας επικοινωνίας
+                Υποβληθηκε μεσω της φορμας επικοινωνιας
               </Text>
 
               {/* Contact details */}
               <Section className="px-6 py-5 mb-6 bg-background">
                 <Text className="m-0 mb-3 text-xs tracking-widest text-gray-400 uppercase">
-                  Στοιχεία επικοινωνίας
+                  Στοιχεια επικοινωνιας
                 </Text>
 
                 <Hr className="my-2 border-gray-200" />
@@ -104,7 +104,7 @@ export default function ContactNotification({
               {/* Shipment details */}
               <Section className="px-6 py-5 mb-6 bg-background">
                 <Text className="m-0 mb-3 text-xs tracking-widest text-gray-400 uppercase">
-                  Στοιχεία μεταφοράς
+                  Στοιχεια μεταφορας
                 </Text>
 
                 <Hr className="my-2 border-gray-200" />
@@ -131,7 +131,7 @@ export default function ContactNotification({
               {/* Description */}
               <Section className="px-6 py-5 bg-background">
                 <Text className="m-0 mb-3 text-xs tracking-widest text-gray-400 uppercase">
-                  Λεπτομέρειες φορτίου
+                  Λεπτομερειες φορτιου
                 </Text>
                 <Hr className="my-2 border-gray-200" />
                 <Text className="m-0 mt-2 text-xs leading-6 text-foreground">

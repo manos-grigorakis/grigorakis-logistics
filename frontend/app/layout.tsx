@@ -29,7 +29,8 @@ export default function RootLayout({
   return (
     <html
       lang="el"
-      className={`${dmSans.variable} ${barlowCondensed.variable}  h-full antialiased scroll-smooth`}
+      data-scroll-behavior="smooth"
+      className={`${dmSans.variable} ${barlowCondensed.variable} h-full antialiased scroll-smooth`}
     >
       <body className="flex flex-col min-h-full">
         <Navbar />
