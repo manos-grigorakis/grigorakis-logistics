@@ -2,6 +2,9 @@
 
 import { navLinks } from "@/data/nav-links";
 import { motion } from "motion/react";
+import LogoLight from "@/public/logo-light.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -47,9 +50,21 @@ export default function Footer() {
       >
         {/* Brand */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
-            Γρηγοράκης <span className="text-primary-500">Logistics</span>
-          </h5>
+          {/* Logo */}
+          <Link
+            href="/"
+            className="-ml-1 block mb-4"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <Image
+              src={LogoLight}
+              alt="Grigorakis Logistics"
+              width={200}
+              height={60}
+              className="h-12 w-auto"
+            />
+          </Link>
+
           <div className="text-sm leading-relaxed text-white/50">
             <p>
               Μέλος του{" "}

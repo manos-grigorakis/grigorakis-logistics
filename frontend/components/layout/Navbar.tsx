@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { navLinks } from "@/data/nav-links";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
+
+import Logo from "@/public/logo.svg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,10 +46,15 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-semibold uppercase whitespace-nowrap"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            γρηγορακης
+            <Image
+              src={Logo}
+              alt="Grigorakis Logistics"
+              width={200}
+              height={60}
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Links */}
@@ -76,10 +84,15 @@ export function Navbar() {
         <div className="flex items-center justify-between md:hidden">
           <Link
             href="/"
-            className="text-xl font-semibold uppercase"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            γρηγορακης
+            <Image
+              src={Logo}
+              alt="Grigorakis Logistics"
+              width={200}
+              height={60}
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Menu & Close Icon */}
