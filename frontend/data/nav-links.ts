@@ -8,10 +8,6 @@ export const navLinks: { name: string; section: string }[] = [
     section: "coverage",
   },
   {
-    name: "στολος",
-    section: "fleet",
-  },
-  {
     name: "διαδικασια",
     section: "process",
   },
@@ -21,6 +17,6 @@ export const navLinks: { name: string; section: string }[] = [
   },
   {
     name: "επικοινωνια",
-    section: "communication",
+    section: "contact",
   },
 ];
