@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const services = [
     "οδικές μεταφορές",
-    "μερική φόρτωσ (LTL)",
+    "μερική φόρτωση (LTL)",
     "containers",
     "ειδικές μεταφορές",
     "μετακομίσεις",
@@ -63,7 +63,7 @@ export default function Footer() {
               </a>
             </p>
             <p className="mt-2">Υποκ. Αθήνα</p>
-            <p>Ασπρόπυργος, Θέση Κούταλα</p>
+            <p>Ασπρόπυργος, Θέση Κουταλά</p>
             <p>Αττική, 19300</p>
           </div>
         </div>

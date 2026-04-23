@@ -91,7 +91,7 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
           <motion.button
             type="button"
-            className="px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-600 hover:cursor-pointer hover:bg-primary-700"
+            className="px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
             initial={{ x: -40, opacity: 0 }}
             animate={{
               x: 0,

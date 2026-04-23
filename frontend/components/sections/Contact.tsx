@@ -24,7 +24,7 @@ export default function Contact() {
 
           <p className="max-w-md leading-relaxed text-white/90">
             Ζητήστε δωρεάν προσφορά ή καλέστε μας απευθείας. Απαντάμε σε όλα τα
-            αιτήματα εντός εργάσιμης ημέρας.
+            αιτήματα εντός μίας εργάσιμης ημέρας.
           </p>
 
           {/* Info */}
