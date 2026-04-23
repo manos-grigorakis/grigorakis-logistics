@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScroller] = useState(false);
 
   // Closes mobile navigation bar on scroll event
   useEffect(() => {
@@ -18,9 +19,17 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => setScroller(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
     <motion.nav
-      className="fixed top-0 z-50 w-full bg-background"
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        scrolled ? "bg-background" : "bg-transparent"
+      }`}
       initial={{ y: -20, opacity: 0 }}
       animate={{
         y: 0,
@@ -153,7 +162,9 @@ export function Navbar() {
       </AnimatePresence>
 
       {/* Ruler */}
-      <div className="w-full h-px bg-ruler"></div>
+      <div
+        className={`w-full h-px bg-ruler transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0"}`}
+      ></div>
     </motion.nav>
   );
 }
