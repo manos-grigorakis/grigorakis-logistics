@@ -12,7 +12,7 @@ export default function InputField({
 }: InputFieldProps) {
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={name} className="uppercase">
+      <label htmlFor={name} className="text-sm uppercase md:text-base">
         {required && <span className="text-red-500">*</span>} {label}
       </label>
       <input
