@@ -10,7 +10,7 @@
 
 ## Overview
 
-This project is a modern and responsive landing page for a medium size logistics company. The main objective of the website is to establish an online presence and attract potential customers through a simple and professional interface.
+This project is a modern and responsive landing page for a medium-sized logistics company. The main objective of the website is to establish an online presence and attract potential customers through a simple and professional interface.
 
 ## Core Features
 
