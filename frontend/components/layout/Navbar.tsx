@@ -25,6 +25,10 @@ export function Navbar() {
       name: "ερωτησεις",
       section: "faqs",
     },
+    {
+      name: "επικοινωνια",
+      section: "communication",
+    },
   ];
 
   return (
