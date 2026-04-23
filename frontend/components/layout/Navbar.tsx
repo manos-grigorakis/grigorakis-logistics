@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { fa } from "zod/locales";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,16 @@ export function Navbar() {
       section: "communication",
     },
   ];
+
+  // Closes mobile navigation bar on scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) setIsOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-background">
@@ -101,7 +112,7 @@ export function Navbar() {
       {/* Mobile dropdown */}
       <div
         className={`overflow-hidden transition-all duration-300 bg-background ease-in-out md:hidden ${
-          isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "min-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-4 pb-4 mx-auto max-w-7xl">
