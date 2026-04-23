@@ -5,13 +5,20 @@ import {
 } from "@/app/lib/validation/contact-form-data";
 import InputField from "../ui/InputField";
 import { TRANSPORT_TYPES } from "@/data/transport-types";
+import { Turnstile } from "next-turnstile";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null); // 1. προσθέτεις το ref
+
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    "success" | "error" | "expired" | "required"
+  >("required");
+  const [error, setError] = useState<string | null>(null);
+  const turnstileRef = useRef<string>("");
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Clean up
   useEffect(() => {
@@ -59,6 +66,11 @@ export default function ContactForm() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    if (turnstileStatus !== "success") {
+      setError("Please verify you are not a robot");
+      return;
+    }
+
     const form = event.currentTarget;
     const formData = new FormData(form);
 
@@ -69,6 +81,7 @@ export default function ContactForm() {
       transportationType: getString(formData.get("transportationType")),
       route: getString(formData.get("route")),
       description: getString(formData.get("description")),
+      cfTurnstileResponse: turnstileRef.current,
     };
 
     const result = ContactSchema.safeParse(payload);
@@ -251,6 +264,36 @@ export default function ContactForm() {
           {errors.description && (
             <p className="text-xs text-red-500">{errors.description}</p>
           )}
+        </div>
+
+        {/* Cloudflare captcha */}
+        <div>
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            theme="light"
+            language="el"
+            size="normal"
+            retry="auto"
+            refreshExpired="auto"
+            onError={() => {
+              setTurnstileStatus("error");
+              setError("Η επαλήθευση απέτυχε. Δοκιμάστε ξανά.");
+            }}
+            onExpire={() => {
+              setTurnstileStatus("expired");
+              setError("Η επαλήθευση έληξε. Παρακαλώ επαληθεύστε ξανά.");
+            }}
+            onLoad={() => {
+              setTurnstileStatus("required");
+              setError(null);
+            }}
+            onVerify={(token) => {
+              setTurnstileStatus("success");
+              turnstileRef.current = token;
+              setError(null);
+            }}
+          />
+          {error && <p className="text-xs text-red-500">{error}</p>}
         </div>
 
         {/* Submit button */}

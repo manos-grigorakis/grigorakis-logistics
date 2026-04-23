@@ -6,6 +6,8 @@ import { TRANSPORT_TYPES } from "@/data/transport-types";
 import ContactNotification from "@/components/emails/ContactNotification";
 import ContactConfirmation from "@/components/emails/ContactConfirmation";
 
+import { verifyTurnstile } from "@/app/lib/turnstile";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 const receivers = process.env.CONTACT_FORM_RECEIVERS?.split(",") || [
   "info@grigorakis-logistics.gr",
@@ -18,6 +20,17 @@ export async function POST(req: Request) {
 
     if (!result.success)
       return NextResponse.json({ message: "Invalid Input" }, { status: 400 });
+
+    // Captcha
+    const ip = req.headers.get("CF-Connecting-IP") ?? "";
+    const isHuman = await verifyTurnstile(result.data.cfTurnstileResponse, ip);
+
+    if (!isHuman) {
+      return NextResponse.json(
+        { message: "Captcha verification failed" },
+        { status: 400 },
+      );
+    }
 
     const data = result.data;
 
