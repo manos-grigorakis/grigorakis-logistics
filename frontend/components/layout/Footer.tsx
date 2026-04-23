@@ -1,10 +1,16 @@
+"use client";
+
 import { navLinks } from "@/data/nav-links";
+import { motion } from "motion/react";
+import LogoLight from "@/public/logo-light.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const services = [
     "οδικές μεταφορές",
-    "μερική φόρτωσ (LTL)",
+    "μερική φόρτωση (LTL)",
     "containers",
     "ειδικές μεταφορές",
     "μετακομίσεις",
@@ -15,20 +21,50 @@ export default function Footer() {
     <footer className="w-full px-4 py-20 text-white bg-foreground">
       {/* Footer message */}
       <div className="mb-16 text-center">
-        <p className="text-4xl font-bold text-white uppercase">
+        <motion.p
+          className="text-4xl font-bold text-white uppercase"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           κινουμαστε <span className="text-primary-500">μαζι</span>
-        </p>
-        <p className="mt-3 text-sm tracking-widest uppercase text-white/40">
+        </motion.p>
+        <motion.p
+          className="mt-3 text-sm tracking-widest uppercase text-white/60"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           25+ Χρόνια Εμπειρίας · Πανελλαδική Κάλυψη · Αξιόπιστες Παραδόσεις
-        </p>
+        </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8">
+      <motion.div
+        className="grid grid-cols-1 gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         {/* Brand */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
-            Γρηγοράκης <span className="text-primary-500">Logistics</span>
-          </h5>
+          {/* Logo */}
+          <Link
+            href="/"
+            className="-ml-1 block mb-4"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <Image
+              src={LogoLight}
+              alt="Grigorakis Logistics"
+              width={200}
+              height={60}
+              className="h-12 w-auto"
+            />
+          </Link>
+
           <div className="text-sm leading-relaxed text-white/50">
             <p>
               Μέλος του{" "}
@@ -42,14 +78,14 @@ export default function Footer() {
               </a>
             </p>
             <p className="mt-2">Υποκ. Αθήνα</p>
-            <p>Ασπρόπυργος, Θέση Κούταλα</p>
+            <p>Ασπρόπυργος, Θέση Κουταλά</p>
             <p>Αττική, 19300</p>
           </div>
         </div>
 
         {/* Services */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             υπηρεσιες
           </h5>
 
@@ -64,7 +100,7 @@ export default function Footer() {
 
         {/* Sitemap */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             sitemap
           </h5>
 
@@ -83,7 +119,7 @@ export default function Footer() {
         {/* Contact & Hours */}
         <div>
           {/* Contact */}
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             επικοινωνία
           </h5>
 
@@ -103,19 +139,19 @@ export default function Footer() {
           </div>
 
           {/* Hours */}
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             Ωράριο
           </h5>
           <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 20:00</p>
           <div></div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Divider */}
       <div className="h-px max-w-6xl mx-auto mt-16 bg-white/10"></div>
 
       {/* Bottom */}
-      <div className="flex flex-col items-center justify-between max-w-6xl gap-2 mx-auto mt-6 text-xs md:flex-row text-white/30">
+      <div className="flex flex-col items-center justify-between max-w-6xl gap-2 mx-auto mt-6 text-xs md:flex-row text-white/60">
         <p className="mb-2">
           © {currentYear} Grigorakis Logistics. All rights reserved
         </p>

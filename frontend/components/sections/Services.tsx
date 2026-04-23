@@ -1,3 +1,5 @@
+"use client";
+
 import { IconType } from "react-icons";
 import {
   LuTruck,
@@ -7,6 +9,7 @@ import {
   LuBoxes,
   LuWarehouse,
 } from "react-icons/lu";
+import { motion } from "motion/react";
 
 export default function Services() {
   const data: {
@@ -55,26 +58,49 @@ export default function Services() {
   return (
     <section id="services" className="px-4 py-24 text-white bg-foreground">
       <div className="max-w-6xl mx-auto">
-        <span className="text-xs tracking-widest uppercase text-white/40">
+        <motion.span
+          className="text-xs block tracking-widest uppercase text-white/60"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           τι κάνουμε
-        </span>
+        </motion.span>
 
-        <h2 className="mt-2 mb-12 text-4xl font-semibold uppercase">
+        <motion.h2
+          className="mt-2 mb-12 text-4xl font-semibold uppercase"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           οι <span className="text-primary-500">υπηρεσιες</span> μας
-        </h2>
+        </motion.h2>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {data.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <li
+              <motion.li
                 key={index}
                 className="px-6 py-8 transition-colors duration-200 border border-white/10 hover:bg-white/5"
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center justify-center w-10 h-10 bg-primary-500">
-                    <Icon className="w-5 h-5 text-white" />
+                    <Icon
+                      className="w-5 h-5 text-white"
+                      aria-label={`${item.title} icon`}
+                    />
                   </div>
 
                   <span className="block text-sm text-ruler/50">
@@ -88,7 +114,7 @@ export default function Services() {
                 <p className="mt-2 text-sm leading-relaxed text-ruler">
                   {item.description}
                 </p>
-              </li>
+              </motion.li>
             );
           })}
         </ul>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LuArrowDown } from "react-icons/lu";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -40,15 +41,28 @@ export default function Faq() {
   return (
     <section id="faqs" className="px-4 py-24">
       <div className="max-w-6xl mx-auto">
-        <span className="text-xs tracking-widest uppercase text-foreground/40">
+        <motion.span
+          className="text-xs block tracking-widest uppercase text-foreground/70"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           συχνες ερωτησεις
-        </span>
+        </motion.span>
 
-        <h2 className="mt-2 mb-12 text-4xl font-semibold uppercase">
+        <motion.h2
+          className="mt-2 mb-12 text-4xl font-semibold uppercase"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           εχετε <span className="text-primary-500">απορια;</span>
-        </h2>
+        </motion.h2>
 
         {/* Faqs */}
+
         <div>
           {faqs.map((i, index) => {
             const isOpen = openIndex === index;
@@ -73,11 +87,22 @@ export default function Faq() {
                     />
                   </button>
                 </h2>
-                <div className={openIndex === index ? "block" : "hidden"}>
-                  <div className="py-5 border-b border-b-foreground/50">
-                    <p className="mb-2 text-sm">{i.answer}</p>
-                  </div>
-                </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div className="py-5 border-b border-b-foreground/50">
+                        <p className="mb-2 text-sm">{i.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}

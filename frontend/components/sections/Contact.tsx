@@ -1,13 +1,20 @@
 "use client";
 
+import { motion } from "motion/react";
 import ContactForm from "../forms/ContactForm";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-4 py-24 text-white bg-primary-500">
-      <div className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl ">
+    <section id="contact" className="px-4 py-24 text-white bg-primary-700">
+      <motion.div
+        className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <div>
-          <span className="text-xs tracking-widest uppercase text-white/60">
+          <span className="text-xs tracking-widest uppercase text-[ccc]">
             επικοινωνια
           </span>
 
@@ -17,12 +24,18 @@ export default function Contact() {
 
           <p className="max-w-md leading-relaxed text-white/90">
             Ζητήστε δωρεάν προσφορά ή καλέστε μας απευθείας. Απαντάμε σε όλα τα
-            αιτήματα εντός εργάσιμης ημέρας.
+            αιτήματα εντός μίας εργάσιμης ημέρας.
           </p>
 
           {/* Info */}
           <ul className="mt-12">
-            <li className="py-4 border-b border-white/40">
+            <motion.li
+              className="py-4 border-b border-white/40"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 email
               </span>
@@ -39,29 +52,47 @@ export default function Contact() {
                   </a>
                 </p>
               </div>
-            </li>
+            </motion.li>
 
-            <li className="py-4 border-b border-white/40">
+            <motion.li
+              className="py-4 border-b border-white/40"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.35, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 εδρα
               </span>
               <p className="uppercase">ασπροπυργος θεση κουταλα, 19300</p>
-            </li>
+            </motion.li>
 
-            <li className="py-4 border-b border-white/40">
+            <motion.li
+              className="py-4 border-b border-white/40"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 ωραριο
               </span>
               <p className="uppercase">δευ - παρ · 08:00 - 20:00</p>
-            </li>
+            </motion.li>
           </ul>
         </div>
 
         {/* Form */}
-        <div className="flex-1 px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground">
+        <motion.div
+          className="flex-1 overflow-hidden  px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <ContactForm />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
