@@ -4,39 +4,9 @@ import {
   ContactFormData,
 } from "@/app/lib/validation/contact-form-data";
 import InputField from "../ui/InputField";
+import { TRANSPORT_TYPES } from "@/data/transport-types";
 
 export default function ContactForm() {
-  const transportTypes: { value: string; option: string }[] = [
-    {
-      value: "road-transport",
-      option: "Οδική Μεταφορά",
-    },
-    {
-      value: "partial-load",
-      option: "Μερική Φόρτωση",
-    },
-    {
-      value: "containers",
-      option: "Containers",
-    },
-    {
-      value: "special-cargo",
-      option: "Ειδικές Μεταφορές",
-    },
-    {
-      value: "relocation",
-      option: "Μετακόμιση",
-    },
-    {
-      value: "storage",
-      option: "Αποθήκευση",
-    },
-    {
-      value: "other",
-      option: "Αλλο",
-    },
-  ];
-
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -243,7 +213,7 @@ export default function ContactForm() {
               Eπιλέξτε τον τύπο μεταφοράς
             </option>
 
-            {transportTypes.map((type) => (
+            {TRANSPORT_TYPES.map((type) => (
               <option value={type.value} key={type.value}>
                 {type.option}
               </option>
