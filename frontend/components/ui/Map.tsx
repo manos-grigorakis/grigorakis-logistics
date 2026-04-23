@@ -1,5 +1,19 @@
 "use client";
 
+import { motion } from "motion/react";
+
+const lines = [
+  { x1: 370, y1: 175, x2: 390, y2: 310 }, // Thessaloniki → Athens
+  { x1: 390, y1: 310, x2: 295, y2: 300 }, // Athens → Patras
+  { x1: 390, y1: 310, x2: 390, y2: 430 }, // Athens → Heraklion
+  { x1: 370, y1: 175, x2: 435, y2: 160 }, // Thessaloniki → Kavala
+  { x1: 435, y1: 160, x2: 490, y2: 148 }, // Kavala → Alexandroupoli
+  { x1: 375, y1: 230, x2: 395, y2: 255 }, // Larissa → Volos
+  { x1: 290, y1: 235, x2: 370, y2: 175 }, // Ioannina → Thessaloniki
+  { x1: 390, y1: 310, x2: 330, y2: 360 }, // Athens → Kalamata
+  { x1: 390, y1: 430, x2: 330, y2: 435 }, // Heraklion → Chania
+];
+
 const cities = [
   { name: "Αθήνα", x: 390, y: 310 },
   { name: "Θεσσαλονίκη", x: 370, y: 175 },
@@ -14,7 +28,7 @@ const cities = [
   { name: "Χανιά", x: 330, y: 435 },
 ];
 
-export default function GreeceMap() {
+export default function GreeceMap({ inView }: { inView: boolean }) {
   return (
     <svg
       viewBox="220 80 350 400"
@@ -115,32 +129,30 @@ export default function GreeceMap() {
         <path d="M 430 240 L 445 225 L 460 235 L 455 260 L 440 270 L 428 255 Z" />
       </g>
 
-      {/* ── Route lines between cities ── */}
-      <g
-        stroke="#d94a1f"
-        strokeOpacity="0.18"
-        strokeWidth="1"
-        strokeDasharray="4 6"
-        fill="none"
-      >
-        {/* Thessaloniki → Athens */}
-        <line x1="370" y1="175" x2="390" y2="310" />
-        {/* Athens → Patras */}
-        <line x1="390" y1="310" x2="295" y2="300" />
-        {/* Athens → Heraklion */}
-        <line x1="390" y1="310" x2="390" y2="430" />
-        {/* Thessaloniki → Kavala */}
-        <line x1="370" y1="175" x2="435" y2="160" />
-        {/* Kavala → Alex/poli */}
-        <line x1="435" y1="160" x2="490" y2="148" />
-        {/* Larissa → Volos */}
-        <line x1="375" y1="230" x2="395" y2="255" />
-        {/* Ioannina → Thessaloniki */}
-        <line x1="290" y1="235" x2="370" y2="175" />
-        {/* Athens → Kalamata */}
-        <line x1="390" y1="310" x2="330" y2="360" />
-        {/* Heraklion → Chania */}
-        <line x1="390" y1="430" x2="330" y2="435" />
+      <g stroke="#d94a1f" strokeOpacity="0.18" strokeWidth="1" fill="none">
+        {lines.map((line, index) => (
+          <line
+            key={index}
+            x1={line.x1}
+            y1={line.y1}
+            x2={line.x2}
+            y2={line.y2}
+            strokeDasharray="200"
+            strokeDashoffset="200"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              from="200"
+              to="0"
+              dur="1s"
+              fill="freeze"
+              begin={inView ? `${0.3 + index * 0.15}s` : "indefinite"}
+              calcMode="spline"
+              keyTimes="0;1"
+              keySplines="0.4 0 0.2 1"
+            />
+          </line>
+        ))}
       </g>
 
       {/* ── City markers ── */}
@@ -158,7 +170,7 @@ export default function GreeceMap() {
               to="18"
               dur="2.5s"
               repeatCount="indefinite"
-              begin={`${(index * 0.2) % 2}s`}
+              begin={inView ? `${0.5 + index * 0.1}s` : "indefinite"}
             />
             <animate
               attributeName="opacity"
@@ -166,19 +178,25 @@ export default function GreeceMap() {
               to="0"
               dur="2.5s"
               repeatCount="indefinite"
-              begin={`${(index * 0.2) % 2}s`}
+              begin={inView ? `${0.5 + index * 0.1}s` : "indefinite"}
             />
           </circle>
 
-          <circle
+          <motion.circle
             cx={city.x}
             cy={city.y}
             r="3.5"
             fill="#d94a1f"
-            fillOpacity="0.75"
-            stroke="#f2ede4"
-            strokeWidth="1"
-            strokeOpacity="0.6"
+            fillOpacity={0}
+            animate={
+              inView ? { fillOpacity: 0.75, r: 3.5 } : { fillOpacity: 0, r: 0 }
+            }
+            initial={{ fillOpacity: 0, r: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: 0.5 + index * 0.1,
+              ease: "backOut",
+            }}
           />
         </g>
       ))}

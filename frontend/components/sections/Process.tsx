@@ -1,3 +1,5 @@
+"use client";
+
 import { IconType } from "react-icons";
 import {
   LuMessageSquare,
@@ -5,6 +7,7 @@ import {
   LuPackageOpen,
   LuPackageCheck,
 } from "react-icons/lu";
+import { motion } from "motion/react";
 
 export default function Process() {
   const steps: { icon: IconType; title: string; description: string }[] = [
@@ -37,33 +40,79 @@ export default function Process() {
   return (
     <section id="process" className="px-4 py-24 text-foreground">
       <div className="max-w-6xl mx-auto">
-        <span className="text-xs tracking-widest uppercase text-foreground/40">
+        <motion.span
+          className="text-xs block tracking-widest uppercase text-foreground/40"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           διαδικασια
-        </span>
+        </motion.span>
 
-        <h2 className="mt-2 mb-24 text-4xl font-semibold uppercase">
+        <motion.h2
+          className="mt-2 mb-24 text-4xl font-semibold uppercase"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           πως <span className="text-primary-500">δουλευουμε</span>
-        </h2>
+        </motion.h2>
 
         {/* Stepper */}
         <div className="relative">
           {/* Desktop line */}
-          <div className="absolute top-0 bottom-0 w-px left-7 bg-foreground/20 md:hidden" />
+          <div className="absolute left-0 right-0 hidden h-px top-7 md:block bg-foreground/10">
+            <motion.div
+              className="h-full bg-foreground/20"
+              initial={{ width: "0%" }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
+              viewport={{ once: true }}
+            />
+          </div>
 
           {/* Mobile line */}
-          <div className="absolute left-0 right-0 hidden h-px top-7 bg-foreground/20 md:block" />
+          <div className="absolute top-0 bottom-0 w-px left-7 bg-foreground/10 md:hidden">
+            <motion.div
+              className="w-full bg-foreground/20"
+              initial={{ height: "0%" }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
+              viewport={{ once: true }}
+            />
+          </div>
 
           <ol className="relative flex flex-col gap-8 text-sm font-medium md:flex-row md:gap-0 md:items-center md:w-full">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <li
+                <motion.li
                   key={index}
                   className="relative z-10 flex flex-row items-center gap-4 md:flex-col md:flex-1 md:items-center md:gap-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.15,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true }}
                 >
-                  <div className="flex items-center justify-center rounded-full w-15 h-15 shrink-0 bg-primary-500">
+                  <motion.div
+                    className="flex items-center justify-center rounded-full w-15 h-15 shrink-0 bg-primary-500"
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.15 + 0.2,
+                      ease: "backOut",
+                    }}
+                    viewport={{ once: true }}
+                  >
                     <Icon className="w-8 h-8 text-white" />
-                  </div>
+                  </motion.div>
                   <div className="md:mt-3 md:text-center">
                     <span className="block text-sm text-foreground/50">
                       {index + 1}
@@ -75,7 +124,7 @@ export default function Process() {
                       {step.description}
                     </p>
                   </div>
-                </li>
+                </motion.li>
               );
             })}
           </ol>
