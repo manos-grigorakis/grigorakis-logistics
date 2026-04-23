@@ -43,12 +43,12 @@ This project is a modern and responsive landing page for a medium-sized logistic
 3. Install dependencies
 
    ```bash
-    npm install
+   npm install
    ```
 
 4. Run development server
    ```bash
-    npm run dev
+   npm run dev
    ```
 
 ## Screenshots
