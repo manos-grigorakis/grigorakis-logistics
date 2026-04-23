@@ -49,14 +49,14 @@ export default function Hero() {
             type="button"
             className="px-5 py-3 text-sm font-medium leading-5 text-white uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
           >
-            Ζητηστε προσφορα
+            <a href="#contact">Ζητηστε προσφορα</a>
           </button>
 
           <button
             type="button"
             className="px-5 py-3 text-sm font-medium leading-5 uppercase border-2 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
           >
-            Δειτε υπηρεσιες
+            <a href="#services">Δειτε υπηρεσιες</a>
           </button>
         </div>
 
