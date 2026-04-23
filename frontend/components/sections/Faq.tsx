@@ -42,7 +42,7 @@ export default function Faq() {
     <section id="faqs" className="px-4 py-24">
       <div className="max-w-6xl mx-auto">
         <motion.span
-          className="text-xs block tracking-widest uppercase text-foreground/40"
+          className="text-xs block tracking-widest uppercase text-foreground/70"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}

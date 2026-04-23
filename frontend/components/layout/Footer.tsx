@@ -28,7 +28,7 @@ export default function Footer() {
           κινουμαστε <span className="text-primary-500">μαζι</span>
         </motion.p>
         <motion.p
-          className="mt-3 text-sm tracking-widest uppercase text-white/40"
+          className="mt-3 text-sm tracking-widest uppercase text-white/60"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -47,7 +47,7 @@ export default function Footer() {
       >
         {/* Brand */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             Γρηγοράκης <span className="text-primary-500">Logistics</span>
           </h5>
           <div className="text-sm leading-relaxed text-white/50">
@@ -70,7 +70,7 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             υπηρεσιες
           </h5>
 
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Sitemap */}
         <div>
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             sitemap
           </h5>
 
@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Contact & Hours */}
         <div>
           {/* Contact */}
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             επικοινωνία
           </h5>
 
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
 
           {/* Hours */}
-          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             Ωράριο
           </h5>
           <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 20:00</p>
@@ -136,7 +136,7 @@ export default function Footer() {
       <div className="h-px max-w-6xl mx-auto mt-16 bg-white/10"></div>
 
       {/* Bottom */}
-      <div className="flex flex-col items-center justify-between max-w-6xl gap-2 mx-auto mt-6 text-xs md:flex-row text-white/30">
+      <div className="flex flex-col items-center justify-between max-w-6xl gap-2 mx-auto mt-6 text-xs md:flex-row text-white/60">
         <p className="mb-2">
           © {currentYear} Grigorakis Logistics. All rights reserved
         </p>

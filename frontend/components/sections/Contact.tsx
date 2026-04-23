@@ -5,7 +5,7 @@ import ContactForm from "../forms/ContactForm";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-4 py-24 text-white bg-primary-500">
+    <section id="contact" className="px-4 py-24 text-white bg-primary-700">
       <motion.div
         className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl"
         initial={{ opacity: 0, x: -30 }}
@@ -14,7 +14,7 @@ export default function Contact() {
         viewport={{ once: true }}
       >
         <div>
-          <span className="text-xs tracking-widest uppercase text-white/60">
+          <span className="text-xs tracking-widest uppercase text-[ccc]">
             επικοινωνια
           </span>
 

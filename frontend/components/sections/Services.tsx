@@ -59,7 +59,7 @@ export default function Services() {
     <section id="services" className="px-4 py-24 text-white bg-foreground">
       <div className="max-w-6xl mx-auto">
         <motion.span
-          className="text-xs block tracking-widest uppercase text-white/40"
+          className="text-xs block tracking-widest uppercase text-white/60"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -97,7 +97,10 @@ export default function Services() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center justify-center w-10 h-10 bg-primary-500">
-                    <Icon className="w-5 h-5 text-white" />
+                    <Icon
+                      className="w-5 h-5 text-white"
+                      aria-label={`${item.title} icon`}
+                    />
                   </div>
 
                   <span className="block text-sm text-ruler/50">
