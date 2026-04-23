@@ -52,14 +52,15 @@ export default function Trust() {
         <Marquee autoFill={true}>
           <div className="flex gap-8">
             {images.map((i, index) => (
-              <Image
-                key={index}
-                src={i.image}
-                width={130}
-                height={100}
-                alt={i.alt}
-                className="object-contain grayscale transition"
-              />
+              <div key={index} className="relative w-40 h-20">
+                <Image
+                  src={i.image}
+                  fill
+                  sizes="160px"
+                  alt={i.alt}
+                  className="object-contain grayscale transition"
+                />
+              </div>
             ))}
           </div>
         </Marquee>
