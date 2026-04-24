@@ -8,7 +8,7 @@ export default function Coverage() {
   const [inView, setInView] = useState(false);
   const cities = [
     "αθήνα",
-    "θεσαλλονίκη",
+    "θεσσαλονίκη",
     "πάτρα",
     "ηράκλειο",
     "χανιά",
