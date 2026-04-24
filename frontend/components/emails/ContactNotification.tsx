@@ -96,7 +96,7 @@ export default function ContactNotification({
                     Τηλέφωνο
                   </Column>
                   <Column className="text-xs font-semibold text-foreground">
-                    {data.phone || "—"}
+                    {data.phone || "-"}
                   </Column>
                 </Row>
               </Section>
