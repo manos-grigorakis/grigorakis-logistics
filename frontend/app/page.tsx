@@ -5,7 +5,7 @@ import Process from "@/components/sections/Process";
 import Services from "@/components/sections/Services";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
-import Fleet from "@/components/sections/fleet";
+import Fleet from "@/components/sections/Fleet";
 
 export default function Home() {
   return (
