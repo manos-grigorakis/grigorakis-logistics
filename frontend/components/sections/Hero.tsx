@@ -89,9 +89,9 @@ export default function Hero() {
 
         {/* CTA */}
         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
-          <motion.button
-            type="button"
-            className="px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
+          <motion.a
+            href="#contact"
+            className="px-5 block py-3 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
             initial={{ x: -40, opacity: 0 }}
             animate={{
               x: 0,
@@ -99,12 +99,12 @@ export default function Hero() {
               transition: { duration: 0.6, delay: 0.5, ease: "backOut" },
             }}
           >
-            <a href="#contact">Ζητηστε προσφορα</a>
-          </motion.button>
+            Ζητηστε προσφορα
+          </motion.a>
 
-          <motion.button
-            type="button"
-            className="px-5 py-3 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
+          <motion.a
+            href="#services"
+            className="px-5 block py-3 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
             initial={{ x: 40, opacity: 0 }}
             animate={{
               x: 0,
@@ -112,8 +112,8 @@ export default function Hero() {
               transition: { duration: 0.6, delay: 0.5, ease: "backOut" },
             }}
           >
-            <a href="#services">Δειτε υπηρεσιες</a>
-          </motion.button>
+            Δειτε υπηρεσιες
+          </motion.a>
         </div>
 
         {/* Stats */}
