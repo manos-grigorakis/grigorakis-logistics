@@ -31,7 +31,7 @@ export function Navbar() {
   return (
     <motion.nav
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
-        scrolled ? "bg-background" : "bg-transparent"
+        scrolled || isOpen ? "bg-background" : "bg-transparent"
       }`}
       initial={{ y: -20, opacity: 0 }}
       animate={{
@@ -42,7 +42,7 @@ export function Navbar() {
     >
       <div className="p-4 mx-auto max-w-7xl">
         {/* Desktop */}
-        <div className="hidden md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8">
+        <div className="hidden lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center md:gap-8">
           {/* Logo */}
           <Link
             href="/"
@@ -53,7 +53,8 @@ export function Navbar() {
               alt="Grigorakis Logistics"
               width={200}
               height={60}
-              className="h-12 w-auto"
+              loading="eager"
+              className="w-auto h-12"
             />
           </Link>
 
@@ -72,16 +73,16 @@ export function Navbar() {
           </ul>
 
           {/* CTA */}
-          <button
-            type="button"
-            className="px-3 py-2 text-sm font-medium leading-5 text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
+          <a
+            href="#contact"
+            className="block px-3 py-2 text-sm font-medium leading-5 text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
           >
-            <a href="#contact">Προσφορα</a>
-          </button>
+            προσφορα
+          </a>
         </div>
 
         {/* Mobile */}
-        <div className="flex items-center justify-between md:hidden">
+        <div className="flex items-center justify-between lg:hidden">
           <Link
             href="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -91,14 +92,15 @@ export function Navbar() {
               alt="Grigorakis Logistics"
               width={200}
               height={60}
-              className="h-12 w-auto"
+              loading="eager"
+              className="w-auto h-12"
             />
           </Link>
 
           {/* Menu & Close Icon */}
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="relative w-10 h-10"
+            className="relative w-10 h-10 hover:cursor-pointer"
             aria-label="Toggle menu"
           >
             <span
@@ -125,7 +127,7 @@ export function Navbar() {
         {" "}
         {isOpen && (
           <motion.div
-            className="bg-background md:hidden"
+            className="min-h-screen bg-background lg:hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -133,6 +135,7 @@ export function Navbar() {
             style={{ overflow: "hidden" }}
           >
             <div className="px-4 pb-4 mx-auto max-w-7xl">
+              {/* Mobile links */}
               <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
                 {navLinks.map((link, index) => (
                   <motion.li
@@ -148,7 +151,7 @@ export function Navbar() {
                     <a
                       href={"#" + link.section}
                       onClick={() => setIsOpen(false)}
-                      className="block py-2"
+                      className="block py-2 transition-colors hover:text-orange-500"
                     >
                       {link.name}
                     </a>
@@ -164,9 +167,14 @@ export function Navbar() {
                     ease: "easeOut",
                   }}
                 >
-                  <button className="w-full px-3 py-2 text-sm font-medium text-white uppercase transition-colors bg-foreground hover:bg-primary-600 hover:cursor-pointer">
-                    <a href="#contact">προσφορα</a>
-                  </button>
+                  {/* CTA */}
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full px-3 py-2 text-sm font-medium text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
+                  >
+                    προσφορα
+                  </a>
                 </motion.li>
               </ul>
             </div>

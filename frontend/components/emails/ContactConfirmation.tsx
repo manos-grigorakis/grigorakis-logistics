@@ -22,7 +22,7 @@ export default function ContactConfirmation({
   return (
     <Html lang="el">
       <Head />
-      <Preview>Λάβαμε το αίτημά σας — Γρηγοράκης Logistics</Preview>
+      <Preview>Λάβαμε το αίτημα σας — Γρηγοράκης Logistics</Preview>
       <Tailwind
         config={{
           theme: {
@@ -56,7 +56,7 @@ export default function ContactConfirmation({
             {/* Body */}
             <Section className="px-10 pt-10 pb-6">
               <Heading className="m-0 mb-6 text-xl font-bold text-foreground">
-                Λάβαμε το αίτημά σας
+                Λάβαμε το αίτημα σας
               </Heading>
 
               <Text className="m-0 mb-4 text-sm leading-7 text-gray-600">
@@ -64,7 +64,7 @@ export default function ContactConfirmation({
               </Text>
 
               <Text className="m-0 mb-4 text-sm leading-7 text-gray-600">
-                Σας ευχαριστούμε για το ενδιαφέρον σας. Το αίτημό σας ελήφθη
+                Σας ευχαριστούμε για το ενδιαφέρον σας. Το αίτημα σας ελήφθη
                 επιτυχώς και η ομάδα μας θα επικοινωνήσει μαζί σας εντός{" "}
                 <strong>1 εργάσιμης ημέρας</strong> με αναλυτική προσφορά.
               </Text>
@@ -114,7 +114,7 @@ export default function ContactConfirmation({
                 ΓΡΗΓΟΡΑΚΗΣ LOGISTICS
               </Text>
               <Text className="m-0 mb-1 text-xs text-gray-400">
-                Ασπρόπυργος, Θέση Κουτάλα 19300 &nbsp;·&nbsp; ΔΕΥ–ΠΑΡ
+                Ασπρόπυργος, Θέση Κουταλά 19300 &nbsp;·&nbsp; ΔΕΥ–ΠΑΡ
                 08:00–20:00
               </Text>
               <Text className="m-0 text-xs text-gray-400">
