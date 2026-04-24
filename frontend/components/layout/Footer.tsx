@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Logo */}
           <Link
             href="/"
-            className="-ml-1 block mb-4"
+            className="block mb-4 -ml-1"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <Image
@@ -61,7 +61,7 @@ export default function Footer() {
               alt="Grigorakis Logistics"
               width={200}
               height={60}
-              className="h-12 w-auto"
+              className="w-auto h-12"
             />
           </Link>
 
@@ -72,14 +72,13 @@ export default function Footer() {
                 href="https://grigorakis-transport.gr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-500 transition-colors"
+                className="transition-colors hover:text-primary-500"
               >
                 Δικτύου Μεταφορών Γρηγοράκης
               </a>
             </p>
-            <p className="mt-2">Υποκ. Αθήνα</p>
-            <p>Ασπρόπυργος, Θέση Κουταλά</p>
-            <p>Αττική, 19300</p>
+            <p className="mt-2">Θέση Κουταλά, Ασπρόπυργος 19300</p>
+            <p>Αττική, Ελλάδα</p>
           </div>
         </div>
 
