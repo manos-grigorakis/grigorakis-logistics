@@ -12,6 +12,10 @@ export const navLinks: { name: string; section: string }[] = [
     section: "process",
   },
   {
+    name: "στολος",
+    section: "fleet",
+  },
+  {
     name: "ερωτησεις",
     section: "faqs",
   },

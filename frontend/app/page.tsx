@@ -5,6 +5,7 @@ import Process from "@/components/sections/Process";
 import Services from "@/components/sections/Services";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
+import Fleet from "@/components/sections/fleet";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <Coverage />
       <Process />
+      <Fleet />
       <Faq />
       <Contact />
     </>
