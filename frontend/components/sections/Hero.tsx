@@ -91,7 +91,7 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
           <motion.a
             href="#contact"
-            className="px-5 block py-3 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
+            className="px-5 block py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
             initial={{ x: -40, opacity: 0 }}
             animate={{
               x: 0,
@@ -104,7 +104,7 @@ export default function Hero() {
 
           <motion.a
             href="#services"
-            className="px-5 block py-3 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
+            className="px-5 block py-4 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
             initial={{ x: 40, opacity: 0 }}
             animate={{
               x: 0,
