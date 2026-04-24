@@ -71,8 +71,8 @@ export default function Fleet() {
           close={() => setIndex(-1)}
           slides={images}
           styles={{
-            root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.9)" },
-            container: { backgroundColor: "#000" },
+            root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.85)" },
+            container: { backgroundColor: "rgba(0, 0, 0, 0.85)" },
           }}
           render={{
             slide: ({ slide }) => (
