@@ -22,11 +22,23 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
 
+  // Detects scroll event
   useEffect(() => {
     const handleScroll = () => setScroller(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  // Closes mobile dropdown if window is above threshold
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setIsOpen(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <motion.nav
@@ -60,25 +72,33 @@ export function Navbar() {
 
           {/* Links */}
           <ul className="flex items-center justify-center gap-8 text-xs font-medium uppercase">
-            {navLinks.map((link) => (
-              <li key={link.name}>
+            {navLinks.map((link, index) => (
+              <motion.li
+                key={link.name}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.15 + index * 0.07 }}
+              >
                 <a
                   href={"#" + link.section}
                   className="block py-2 transition-colors hover:text-orange-500"
                 >
                   {link.name}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
 
           {/* CTA */}
-          <a
+          <motion.a
             href="#contact"
             className="block px-3 py-2 text-sm font-medium leading-5 text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.15 + navLinks.length * 0.07 }}
           >
             προσφορα
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile */}
