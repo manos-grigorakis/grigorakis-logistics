@@ -7,16 +7,16 @@
   --ruler: #cccccc;
 
   /* Primary */
-  --primary-50: #fdf3f0;
-  --primary-100: #fbd6cc;
-  --primary-200: #f7b3a3;
-  --primary-300: #f38f7a;
-  --primary-400: #ee6c52;
-  --primary-500: #d94a1f;
-  --primary-600: #b83e1a;
-  --primary-700: #973315;
-  --primary-800: #762710;
-  --primary-900: #551c0b;
+  --primary-50: #eef5fb;
+  --primary-100: #d6e6f5;
+  --primary-200: #adcdea;
+  --primary-300: #84b3df;
+  --primary-400: #5b9ad4;
+  --primary-500: #125aa2;
+  --primary-600: #0f4d8a;
+  --primary-700: #0c3f71;
+  --primary-800: #093259;
+  --primary-900: #062441;
 }
 
 @theme inline {
