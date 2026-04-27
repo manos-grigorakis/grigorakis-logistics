@@ -131,27 +131,26 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
 
       <g stroke="#125aa2" strokeOpacity="0.18" strokeWidth="1" fill="none">
         {lines.map((line, index) => (
-          <line
+          <motion.line
             key={index}
             x1={line.x1}
             y1={line.y1}
             x2={line.x2}
             y2={line.y2}
+            stroke="#125aa2"
+            strokeOpacity="0.18"
+            strokeWidth="1"
             strokeDasharray="200"
-            strokeDashoffset="200"
-          >
-            <animate
-              attributeName="stroke-dashoffset"
-              from="200"
-              to="0"
-              dur="1s"
-              fill="freeze"
-              begin={inView ? `${0.3 + index * 0.15}s` : "indefinite"}
-              calcMode="spline"
-              keyTimes="0;1"
-              keySplines="0.4 0 0.2 1"
-            />
-          </line>
+            initial={{ strokeDashoffset: 200 }}
+            animate={
+              inView ? { strokeDashoffset: 0 } : { strokeDashoffset: 200 }
+            }
+            transition={{
+              duration: 1,
+              delay: 0.3 + index * 0.15,
+              ease: [0.4, 0, 0.2, 1],
+            }}
+          />
         ))}
       </g>
 
