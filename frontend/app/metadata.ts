@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     "μεταφορική",
     "εθνικές μεταφορές",
     "οδικές μεταφορές",
+    "γρηγοράκης μεταφορική",
+    "γρηγοράκης logistics",
     "logistics",
     "επικαθήμενα",
     "containers",
