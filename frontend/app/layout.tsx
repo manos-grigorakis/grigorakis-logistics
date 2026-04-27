@@ -3,6 +3,7 @@ import { DM_Sans, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -76,6 +77,9 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
       </body>
+
+      {/* Analytics */}
+      <GoogleAnalytics gaId="G-YL947VHQXY" />
     </html>
   );
 }
