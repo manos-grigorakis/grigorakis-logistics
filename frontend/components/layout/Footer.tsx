@@ -2,7 +2,7 @@
 
 import { navLinks } from "@/data/nav-links";
 import { motion } from "motion/react";
-import LogoLight from "@/public/logo-light.svg";
+import Logo from "@/public/logo.webp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,29 +42,14 @@ export default function Footer() {
       </div>
 
       <motion.div
-        className="grid grid-cols-1 gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8"
+        className="grid grid-cols-1 items-start gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         {/* Brand */}
-        <div>
-          {/* Logo */}
-          <Link
-            href="/"
-            className="block mb-4 -ml-1"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <Image
-              src={LogoLight}
-              alt="Grigorakis Logistics"
-              width={200}
-              height={60}
-              className="w-auto h-12"
-            />
-          </Link>
-
+        <div className="flex flex-col justify-start">
           <div className="text-sm leading-relaxed text-white/50">
             <p>
               Μέλος του{" "}
@@ -79,6 +64,21 @@ export default function Footer() {
             </p>
             <p className="mt-2">Θέση Κουταλά, Ασπρόπυργος 19300</p>
             <p>Αττική, Ελλάδα</p>
+
+            {/* Logo */}
+            <Link
+              href="/"
+              className="block mt-4 -ml-1"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <Image
+                src={Logo}
+                alt="Grigorakis Logistics"
+                width={200}
+                height={60}
+                className="w-auto h-30 brightness-0 invert"
+              />
+            </Link>
           </div>
         </div>
 

@@ -46,8 +46,8 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
             cy="50%"
             r="50%"
           >
-            <stop offset="0%" stopColor="#d94a1f" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#d94a1f" stopOpacity="0" />
+            <stop offset="0%" stopColor="#125aa2" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#125aa2" stopOpacity="0" />
           </radialGradient>
         ))}
 
@@ -129,7 +129,7 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
         <path d="M 430 240 L 445 225 L 460 235 L 455 260 L 440 270 L 428 255 Z" />
       </g>
 
-      <g stroke="#d94a1f" strokeOpacity="0.18" strokeWidth="1" fill="none">
+      <g stroke="#125aa2" strokeOpacity="0.18" strokeWidth="1" fill="none">
         {lines.map((line, index) => (
           <line
             key={index}
@@ -186,7 +186,7 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
             cx={city.x}
             cy={city.y}
             r="3.5"
-            fill="#d94a1f"
+            fill="#125aa2"
             fillOpacity={0}
             animate={
               inView ? { fillOpacity: 0.75, r: 3.5 } : { fillOpacity: 0, r: 0 }
