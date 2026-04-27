@@ -9,10 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.4",
     "@react-email/components": "^1.0.12",
     "@react-email/tailwind": "^2.0.7",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "motion": "^12.38.0",
-    "next": "16.2.4",
+    "next": "^16.2.4",
     "next-turnstile": "^1.0.7",
     "react": "19.2.4",
     "react-countup": "^6.5.3",
