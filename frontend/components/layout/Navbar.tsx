@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
-import Logo from "@/public/logo.svg";
+import Logo from "@/public/logo.webp";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,10 +63,10 @@ export function Navbar() {
             <Image
               src={Logo}
               alt="Grigorakis Logistics"
-              width={200}
-              height={60}
+              width={120}
+              height={120}
               loading="eager"
-              className="w-auto h-12"
+              className="w-30 h-30"
             />
           </Link>
 
@@ -81,7 +81,7 @@ export function Navbar() {
               >
                 <a
                   href={"#" + link.section}
-                  className="block py-2 transition-colors hover:text-orange-500"
+                  className="block py-2 transition-colors hover:text-primary-600"
                 >
                   {link.name}
                 </a>
@@ -110,10 +110,10 @@ export function Navbar() {
             <Image
               src={Logo}
               alt="Grigorakis Logistics"
-              width={200}
-              height={60}
+              width={120}
+              height={120}
               loading="eager"
-              className="w-auto h-12"
+              className="w-auto h-20 md:h-30"
             />
           </Link>
 
@@ -171,7 +171,7 @@ export function Navbar() {
                     <a
                       href={"#" + link.section}
                       onClick={() => setIsOpen(false)}
-                      className="block py-2 transition-colors hover:text-orange-500"
+                      className="block py-2 transition-colors hover:text-primary-600"
                     >
                       {link.name}
                     </a>
