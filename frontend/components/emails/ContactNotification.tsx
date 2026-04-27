@@ -11,6 +11,7 @@ import {
   Section,
   Text,
   Tailwind,
+  Img,
 } from "@react-email/components";
 
 import { ContactNotificationProps } from "@/app/types/contact-notification-props";
@@ -28,7 +29,7 @@ export default function ContactNotification({
           theme: {
             extend: {
               colors: {
-                primary: "#d94a1f",
+                primary: "#125aa2",
                 foreground: "#0d0d0f",
                 background: "#f2ede4",
               },
@@ -39,9 +40,15 @@ export default function ContactNotification({
         <Body className="p-8 m-0 bg-background">
           <Container className="max-w-xl mx-auto bg-white">
             {/* Header */}
-            <Section className="px-10 text-center bg-foreground py-7">
-              {/* <Img src="https://grigorakis-logistics.gr/logo.png" width="160" alt="Γρηγοράκης Logistics" /> */}
-              <Text className="m-0 text-xl font-bold tracking-widest text-white">
+            <Section className="px-10 text-center bg-white py-7">
+              {/* Logo */}
+              <Img
+                src="https://grigorakis-logistics.gr/logo.png"
+                width="160"
+                alt="Γρηγοράκης Logistics"
+                className="mx-auto mb-4"
+              />
+              <Text className="m-0 text-xl font-bold tracking-widest text-foreground">
                 ΓΡΗΓΟΡΑΚΗΣ
               </Text>
               <Text className="text-primary text-xs tracking-widest m-0 mt-0.5">
