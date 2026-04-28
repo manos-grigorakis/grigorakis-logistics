@@ -34,12 +34,14 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-      </body>
 
-      {/* Analytics */}
-      <GoogleAnalytics gaId="G-YL947VHQXY" />
-      <Analytics />
-      <SpeedInsights />
+        {/* Analytics */}
+        {process.env.NODE_ENV === "production" && (
+          <GoogleAnalytics gaId="G-YL947VHQXY" />
+        )}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
