@@ -133,10 +133,16 @@ export default function Hero() {
                 <span className="text-lg font-bold sm:text-2xl">
                   {isInView ? (
                     <CountUp
+                      start={0}
                       end={item.header}
-                      duration={1.5}
+                      duration={2}
                       separator="."
-                      delay={index * 0.15}
+                      useEasing={true}
+                      easingFn={(t, b, c, d) => {
+                        t /= d;
+                        t--;
+                        return c * (t * t * t + 1) + b;
+                      }}
                     />
                   ) : (
                     <span>0</span>
