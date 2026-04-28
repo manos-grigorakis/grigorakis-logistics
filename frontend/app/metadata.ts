@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Εθνικές οδικές μεταφορές σε όλη την Ελλάδα από τον Ασπρόπυργο. Επικαθήμενα, containers, μετακομίσεις και ειδικές μεταφορές. Άμεση εξυπηρέτηση, αξιόπιστες παραδόσεις.",
     url: "https://grigorakis-logistics.gr",
-    siteName: "Γρηγοράκης Logistics",
+    siteName: "Γρηγοράκης Μεταφορική",
     locale: "el_GR",
     type: "website",
   },
