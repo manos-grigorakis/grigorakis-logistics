@@ -1,4 +1,6 @@
-import Marquee from "react-fast-marquee";
+import dynamic from "next/dynamic";
+const Marquee = dynamic(() => import("react-fast-marquee"), { ssr: false });
+
 import Image, { StaticImageData } from "next/image";
 
 import Zagori from "@/public/company-logos/zagori-logo.webp";

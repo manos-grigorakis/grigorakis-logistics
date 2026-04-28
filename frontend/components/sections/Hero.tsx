@@ -1,6 +1,11 @@
 "use client";
 
-import CountUp from "react-countup";
+import dynamic from "next/dynamic";
+
+const CountUp = dynamic(() => import("react-countup"), {
+  ssr: false,
+  loading: () => <span>0</span>,
+});
 import { motion } from "motion/react";
 
 export default function Hero() {

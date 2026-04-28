@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Lightbox from "yet-another-react-lightbox";
+import dynamic from "next/dynamic";
+const Lightbox = dynamic(() => import("yet-another-react-lightbox"), {
+  ssr: false,
+});
 import "yet-another-react-lightbox/styles.css";
 
 export default function Fleet() {
