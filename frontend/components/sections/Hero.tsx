@@ -77,20 +77,12 @@ export default function Hero() {
           </m.span>
         </m.h1>
 
-        <m.p
-          className="max-w-md text-foreground/70"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, delay: 0.6, ease: "easeOut" },
-          }}
-        >
+        <p className="max-w-md text-foreground/70 animate-fade-in-up">
           Η μεταφορική εταιρία{" "}
           <span className="font-bold text-primary-500">Γρηγοράκης</span>{" "}
           αναλαμβάνει μεταφορές σε όλη την Ελλάδα, με συνέπεια, ασφάλεια και
           άμεση εξυπηρέτηση.
-        </m.p>
+        </p>
 
         {/* CTA */}
         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
