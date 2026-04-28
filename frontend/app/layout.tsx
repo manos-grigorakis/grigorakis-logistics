@@ -41,11 +41,11 @@ export default function RootLayout({
         </LazyMotion>
 
         {/* Analytics */}
-        {process.env.NODE_ENV === "production" && (
+         {/* {process.env.NODE_ENV === "production" && (
           <GoogleAnalytics gaId="G-YL947VHQXY" />
         )}
         <Analytics />
-        <SpeedInsights />
+        <SpeedInsights /> */}
       </body>
     </html>
   );
