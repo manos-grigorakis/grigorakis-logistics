@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { LazyMotion } from "framer-motion";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -22,10 +22,6 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-// Load domAnimation features asynchronously to reduce initial JS bundle
-const loadFeatures = () =>
-  import("framer-motion").then((mod) => mod.domAnimation);
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +34,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${barlowCondensed.variable} h-full antialiased scroll-smooth`}
     >
       <body className="flex flex-col min-h-full">
-        <LazyMotion features={loadFeatures}>
+        <LazyMotion features={domAnimation}>
           <Navbar />
           <main>{children}</main>
           <Footer />
