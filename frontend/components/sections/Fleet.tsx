@@ -16,9 +16,10 @@ export default function Fleet() {
   const images: { src: string; alt: string }[] = [
     { src: "/fleet/parked-truck.webp", alt: "Parked truck" },
     { src: "/fleet/truck-in-motion.webp", alt: "Truck in motion" },
-    { src: "/fleet/trucks-fleet.webp", alt: "Trucks fleet" },
-    { src: "/fleet/truck-in-logistics.webp", alt: "Truck in logistics" },
+    { src: "/fleet/truck-with-house.webp", alt: "Truck transporting a house" },
     { src: "/fleet/truck-with-boat.webp", alt: "Truck transporting a boat" },
+    { src: "/fleet/red-truck.webp", alt: "Red truck in motion" },
+    { src: "/fleet/truck-on-road.webp", alt: "Truck on the road" },
   ];
 
   return (
