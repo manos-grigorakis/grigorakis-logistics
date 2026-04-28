@@ -28,14 +28,14 @@ export default function Hero() {
   return (
     <section className="relative flex items-center justify-around px-4 overflow-hidden min-h-lvh">
       {/* Background */}
-      <m.div
+      {/*<m.div
         className="absolute z-0 pointer-events-none inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"
         initial={{ opacity: 0.6 }}
         animate={{
           opacity: 1,
           transition: { duration: 1 },
         }}
-      />
+      />*/}
 
       <div className="flex flex-col items-center justify-center text-center">
         <m.span
