@@ -11,7 +11,7 @@ export default function Footer() {
   const services = [
     "οδικές μεταφορές",
     "μερική φόρτωση (LTL)",
-    "containers",
+    "containers (πώληση & μεταφορά)",
     "ειδικές μεταφορές",
     "μετακομίσεις",
     "αποθήκευση",
@@ -37,7 +37,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          25+ Χρόνια Εμπειρίας · Πανελλαδική Κάλυψη · Αξιόπιστες Παραδόσεις
+          35+ Χρόνια Εμπειρίας · Πανελλαδική Κάλυψη · Αξιόπιστες Παραδόσεις
         </m.p>
       </div>
 
@@ -141,8 +141,7 @@ export default function Footer() {
           <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             Ωράριο
           </h5>
-          <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 20:00</p>
-          <div></div>
+          <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 17:00</p>
         </div>
       </m.div>
 

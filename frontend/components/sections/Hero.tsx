@@ -1,16 +1,12 @@
 "use client";
 
-import { useRef } from "react";
-import { m, useInView } from "framer-motion";
+import { m } from "framer-motion";
 import CountUp from "react-countup";
 
 export default function Hero() {
-  const statsRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(statsRef, { once: true });
-
   const stats: { header: number; symbol: string; value: string }[] = [
-    { header: 25, symbol: "+", value: "έτη εμπειρίας" },
-    { header: 10_000, symbol: "+", value: "παραδόσεις" },
+    { header: 35, symbol: "+", value: "έτη εμπειρίας" },
+    { header: 30, symbol: "K +", value: "παραδόσεις" },
     { header: 99, symbol: "%", value: "έγκαιρες παραδόσεις" },
   ];
 
@@ -109,10 +105,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div
-          ref={statsRef}
-          className="flex flex-col items-center gap-4 sm:flex-row"
-        >
+        <div className="flex flex-col items-center gap-4 sm:flex-row">
           {stats.map((item, index) => (
             <m.div
               key={item.header}
@@ -131,22 +124,13 @@ export default function Hero() {
 
               <div className="text-center capitalize">
                 <span className="text-lg font-bold sm:text-2xl">
-                  {isInView ? (
-                    <CountUp
-                      start={0}
-                      end={item.header}
-                      duration={2}
-                      separator="."
-                      useEasing={true}
-                      easingFn={(t, b, c, d) => {
-                        t /= d;
-                        t--;
-                        return c * (t * t * t + 1) + b;
-                      }}
-                    />
-                  ) : (
-                    <span>0</span>
-                  )}
+                  <CountUp
+                    end={item.header}
+                    duration={2}
+                    separator="."
+                    delay={0.8 + index * 0.15}
+                  />
+
                   {item.symbol}
                 </span>
                 <p className="text-sm font-light text-foreground/70">
