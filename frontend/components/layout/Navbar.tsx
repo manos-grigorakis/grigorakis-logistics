@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "@/data/nav-links";
 import Link from "next/link";
-import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 import Logo from "@/public/logo.webp";
@@ -41,16 +40,10 @@ export function Navbar() {
   }, []);
 
   return (
-    <m.nav
+    <nav
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
         scrolled || isOpen ? "bg-background" : "bg-transparent"
       }`}
-      initial={{ y: -20, opacity: 0 }}
-      animate={{
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.6, ease: "easeOut" },
-      }}
     >
       <div className="p-4 mx-auto max-w-7xl">
         {/* Desktop */}
@@ -72,33 +65,25 @@ export function Navbar() {
 
           {/* Links */}
           <ul className="flex items-center justify-center gap-8 text-xs font-medium uppercase">
-            {navLinks.map((link, index) => (
-              <m.li
-                key={link.name}
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.15 + index * 0.07 }}
-              >
+            {navLinks.map((link) => (
+              <li key={link.name}>
                 <a
                   href={"#" + link.section}
                   className="block py-2 transition-colors hover:text-primary-600"
                 >
                   {link.name}
                 </a>
-              </m.li>
+              </li>
             ))}
           </ul>
 
           {/* CTA */}
-          <m.a
+          <a
             href="#contact"
             className="block px-3 py-2 text-sm font-medium leading-5 text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.15 + navLinks.length * 0.07 }}
           >
             προσφορα
-          </m.a>
+          </a>
         </div>
 
         {/* Mobile */}
@@ -143,69 +128,42 @@ export function Navbar() {
       </div>
 
       {/* Mobile dropdown */}
-      <AnimatePresence>
-        {" "}
-        {isOpen && (
-          <m.div
-            className="min-h-screen bg-background lg:hidden"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{ overflow: "hidden" }}
-          >
-            <div className="px-4 pb-4 mx-auto max-w-7xl">
-              {/* Mobile links */}
-              <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
-                {navLinks.map((link, index) => (
-                  <m.li
-                    key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.07,
-                      ease: "easeOut",
-                    }}
-                  >
-                    <a
-                      href={"#" + link.section}
-                      onClick={() => setIsOpen(false)}
-                      className="block py-2 transition-colors hover:text-primary-600"
-                    >
-                      {link.name}
-                    </a>
-                  </m.li>
-                ))}
-                <m.li
-                  className="mt-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: navLinks.length * 0.07,
-                    ease: "easeOut",
-                  }}
-                >
-                  {/* CTA */}
+
+      {isOpen && (
+        <div className="min-h-screen bg-background lg:hidden">
+          <div className="px-4 pb-4 mx-auto max-w-7xl">
+            {/* Mobile links */}
+            <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
+              {navLinks.map((link) => (
+                <li key={link.name}>
                   <a
-                    href="#contact"
+                    href={"#" + link.section}
                     onClick={() => setIsOpen(false)}
-                    className="block w-full px-3 py-2 text-sm font-medium text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
+                    className="block py-2 transition-colors hover:text-primary-600"
                   >
-                    προσφορα
+                    {link.name}
                   </a>
-                </m.li>
-              </ul>
-            </div>
-          </m.div>
-        )}
-      </AnimatePresence>
+                </li>
+              ))}
+              <li className="mt-2">
+                {/* CTA */}
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full px-3 py-2 text-sm font-medium text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
+                >
+                  προσφορα
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
 
       {/* Ruler */}
       <div
         className={`w-full h-px bg-ruler transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0"}`}
       ></div>
-    </m.nav>
+    </nav>
   );
 }

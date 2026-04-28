@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { m } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 const Lightbox = dynamic(() => import("yet-another-react-lightbox"), {
@@ -25,46 +24,30 @@ export default function Fleet() {
     <section id="fleet" className="px-4 py-24">
       <div className="max-w-6xl mx-auto">
         {/* Headers */}
-        <m.span
-          className="block text-xs tracking-widest uppercase text-foreground/70"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <span className="block text-xs tracking-widest uppercase text-foreground/70">
           στολος
-        </m.span>
+        </span>
 
-        <m.h2
-          className="mt-2 text-4xl font-semibold uppercase"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <h2 className="mt-2 text-4xl font-semibold uppercase">
           δυναμη στον <span className="text-primary-500">δρομο</span>
-        </m.h2>
+        </h2>
 
         {/* Gallery */}
         <div className="grid grid-cols-2 gap-2 mt-12 md:grid-cols-3">
           {images.map((img, idx) => (
-            <m.div
+            <div
               key={idx}
               className="relative h-48 overflow-hidden cursor-pointer lg:h-72 group"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              onClick={() => setIndex(idx)}
             >
               <Image
+                onClick={() => setIndex(idx)}
                 src={img.src}
                 alt={img.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
                 className="object-cover sepia-[.15] contrast-[1.05] brightness-90 saturate-[.90] group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-105 transition-all duration-500"
               />
-            </m.div>
+            </div>
           ))}
         </div>
 

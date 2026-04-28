@@ -1,18 +1,11 @@
 "use client";
 
-import { m } from "framer-motion";
 import ContactForm from "../forms/ContactForm";
 
 export default function Contact() {
   return (
     <section id="contact" className="px-4 py-24 text-white bg-primary-700">
-      <m.div
-        className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl"
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
+      <div className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl">
         <div>
           <span className="text-xs tracking-widest uppercase text-[ccc]">
             επικοινωνια
@@ -29,13 +22,7 @@ export default function Contact() {
 
           {/* Info */}
           <ul className="mt-12">
-            <m.li
-              className="py-4 border-b border-white/40"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
+            <li className="py-4 border-b border-white/40">
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 email
               </span>
@@ -52,47 +39,29 @@ export default function Contact() {
                   </a>
                 </p>
               </div>
-            </m.li>
+            </li>
 
-            <m.li
-              className="py-4 border-b border-white/40"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.35, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
+            <li className="py-4 border-b border-white/40">
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 εδρα
               </span>
               <p className="uppercase">ασπροπυργος θεση κουταλα, 19300</p>
-            </m.li>
+            </li>
 
-            <m.li
-              className="py-4 border-b border-white/40"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
+            <li className="py-4 border-b border-white/40">
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 ωραριο
               </span>
               <p className="uppercase">δευ - παρ · 08:00 - 20:00</p>
-            </m.li>
+            </li>
           </ul>
         </div>
 
         {/* Form */}
-        <m.div
-          className="flex-1 overflow-hidden  px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <div className="flex-1 overflow-hidden  px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground">
           <ContactForm />
-        </m.div>
-      </m.div>
+        </div>
+      </div>
     </section>
   );
 }

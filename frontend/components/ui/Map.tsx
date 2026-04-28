@@ -1,7 +1,5 @@
 "use client";
 
-import { m } from "framer-motion";
-
 const lines = [
   { x1: 370, y1: 175, x2: 390, y2: 310 }, // Thessaloniki → Athens
   { x1: 390, y1: 310, x2: 295, y2: 300 }, // Athens → Patras
@@ -131,7 +129,7 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
 
       <g stroke="#125aa2" strokeOpacity="0.18" strokeWidth="1" fill="none">
         {lines.map((line, index) => (
-          <m.line
+          <line
             key={index}
             x1={line.x1}
             y1={line.y1}
@@ -141,15 +139,6 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
             strokeOpacity="0.18"
             strokeWidth="1"
             strokeDasharray="200"
-            initial={{ strokeDashoffset: 200 }}
-            animate={
-              inView ? { strokeDashoffset: 0 } : { strokeDashoffset: 200 }
-            }
-            transition={{
-              duration: 1,
-              delay: 0.3 + index * 0.15,
-              ease: [0.4, 0, 0.2, 1],
-            }}
           />
         ))}
       </g>
@@ -181,21 +170,12 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
             />
           </circle>
 
-          <m.circle
+          <circle
             cx={city.x}
             cy={city.y}
             r="3.5"
             fill="#125aa2"
             fillOpacity={0}
-            animate={
-              inView ? { fillOpacity: 0.75, r: 3.5 } : { fillOpacity: 0, r: 0 }
-            }
-            initial={{ fillOpacity: 0, r: 0 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.5 + index * 0.1,
-              ease: "backOut",
-            }}
           />
         </g>
       ))}

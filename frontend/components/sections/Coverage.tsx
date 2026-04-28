@@ -1,7 +1,6 @@
 "use client";
 
 import Map from "@/components/ui/Map";
-import { m } from "framer-motion";
 import { useState } from "react";
 
 export default function Coverage() {
@@ -24,25 +23,13 @@ export default function Coverage() {
 
       <div className="max-w-6xl mx-auto">
         {/* Headers */}
-        <m.span
-          className="text-xs block tracking-widest uppercase text-foreground/70"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <span className="text-xs block tracking-widest uppercase text-foreground/70">
           καλυψη
-        </m.span>
+        </span>
 
-        <m.h2
-          className="mt-2 text-4xl font-semibold uppercase"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <h2 className="mt-2 text-4xl font-semibold uppercase">
           παντού στην <span className="text-primary-500">Ελλάδα</span>
-        </m.h2>
+        </h2>
 
         {/* Content */}
         <div className="flex flex-col gap-12 mt-12 lg:items-center lg:flex-row">
@@ -55,36 +42,21 @@ export default function Coverage() {
 
             {/* Cities */}
             <ul className="mt-8">
-              {cities.map((city, index) => (
-                <m.li
+              {cities.map((city) => (
+                <li
                   key={city}
                   className="py-2 font-medium capitalize border-b border-foreground/10 text-foreground/80"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.08,
-                    ease: "easeOut",
-                  }}
-                  viewport={{ once: true }}
                 >
                   {city}
-                </m.li>
+                </li>
               ))}
             </ul>
           </div>
 
           {/* Map */}
-          <m.div
-            className="w-full h-125 lg:flex-1"
-            onViewportEnter={() => setInView(true)}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
+          <div className="w-full h-125 lg:flex-1">
             <Map inView={inView} />
-          </m.div>
+          </div>
         </div>
       </div>
     </section>

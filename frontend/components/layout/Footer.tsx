@@ -1,7 +1,6 @@
 "use client";
 
 import { navLinks } from "@/data/nav-links";
-import { m } from "framer-motion";
 import Logo from "@/public/logo.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,33 +20,15 @@ export default function Footer() {
     <footer className="w-full px-4 py-20 text-white bg-foreground">
       {/* Footer message */}
       <div className="mb-16 text-center">
-        <m.p
-          className="text-4xl font-bold text-white uppercase"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <p className="text-4xl font-bold text-white uppercase">
           κινουμαστε <span className="text-primary-500">μαζι</span>
-        </m.p>
-        <m.p
-          className="mt-3 text-sm tracking-widest uppercase text-white/60"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        </p>
+        <p className="mt-3 text-sm tracking-widest uppercase text-white/60">
           25+ Χρόνια Εμπειρίας · Πανελλαδική Κάλυψη · Αξιόπιστες Παραδόσεις
-        </m.p>
+        </p>
       </div>
 
-      <m.div
-        className="grid grid-cols-1 items-start gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
+      <div className="grid grid-cols-1 items-start gap-12 mx-auto text-left max-w-7xl md:grid-cols-4 md:gap-8">
         {/* Brand */}
         <div className="flex flex-col justify-start">
           <div className="text-sm leading-relaxed text-white/50">
@@ -144,7 +125,7 @@ export default function Footer() {
           <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 20:00</p>
           <div></div>
         </div>
-      </m.div>
+      </div>
 
       {/* Divider */}
       <div className="h-px max-w-6xl mx-auto mt-16 bg-white/10"></div>

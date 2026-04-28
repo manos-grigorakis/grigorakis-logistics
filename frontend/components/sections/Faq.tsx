@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { LuArrowDown } from "react-icons/lu";
-import { m, AnimatePresence } from "framer-motion";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -41,25 +40,13 @@ export default function Faq() {
   return (
     <section id="faqs" className="px-4 py-24">
       <div className="max-w-6xl mx-auto">
-        <m.span
-          className="block text-xs tracking-widest uppercase text-foreground/70"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <span className="block text-xs tracking-widest uppercase text-foreground/70">
           συχνες ερωτησεις
-        </m.span>
+        </span>
 
-        <m.h2
-          className="mt-2 mb-12 text-4xl font-semibold uppercase"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <h2 className="mt-2 mb-12 text-4xl font-semibold uppercase">
           εχετε <span className="text-primary-500">απορια;</span>
-        </m.h2>
+        </h2>
 
         {/* Faqs */}
 
@@ -68,17 +55,7 @@ export default function Faq() {
             const isOpen = openIndex === index;
 
             return (
-              <m.div
-                key={index}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true, margin: "-40px" }}
-              >
+              <div key={index}>
                 <h2>
                   <button
                     onClick={() => handleToggle(index)}
@@ -97,23 +74,14 @@ export default function Faq() {
                     />
                   </button>
                 </h2>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <m.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      style={{ overflow: "hidden" }}
-                    >
-                      <div className="py-5 border-b border-b-foreground/50">
-                        <p className="mb-2 text-sm">{i.answer}</p>
-                      </div>
-                    </m.div>
-                  )}
-                </AnimatePresence>
-              </m.div>
+                {isOpen && (
+                  <div key="content">
+                    <div className="py-5 border-b border-b-foreground/50">
+                      <p className="mb-2 text-sm">{i.answer}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
