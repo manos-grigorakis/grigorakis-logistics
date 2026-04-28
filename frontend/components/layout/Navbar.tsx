@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "@/data/nav-links";
 import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 import Logo from "@/public/logo.webp";
@@ -41,7 +41,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
+    <m.nav
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
         scrolled || isOpen ? "bg-background" : "bg-transparent"
       }`}
@@ -73,7 +73,7 @@ export function Navbar() {
           {/* Links */}
           <ul className="flex items-center justify-center gap-8 text-xs font-medium uppercase">
             {navLinks.map((link, index) => (
-              <motion.li
+              <m.li
                 key={link.name}
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -85,12 +85,12 @@ export function Navbar() {
                 >
                   {link.name}
                 </a>
-              </motion.li>
+              </m.li>
             ))}
           </ul>
 
           {/* CTA */}
-          <motion.a
+          <m.a
             href="#contact"
             className="block px-3 py-2 text-sm font-medium leading-5 text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
             initial={{ opacity: 0, y: -8 }}
@@ -98,7 +98,7 @@ export function Navbar() {
             transition={{ duration: 0.3, delay: 0.15 + navLinks.length * 0.07 }}
           >
             προσφορα
-          </motion.a>
+          </m.a>
         </div>
 
         {/* Mobile */}
@@ -146,7 +146,7 @@ export function Navbar() {
       <AnimatePresence>
         {" "}
         {isOpen && (
-          <motion.div
+          <m.div
             className="min-h-screen bg-background lg:hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -158,7 +158,7 @@ export function Navbar() {
               {/* Mobile links */}
               <ul className="flex flex-col gap-2 text-xs font-medium uppercase">
                 {navLinks.map((link, index) => (
-                  <motion.li
+                  <m.li
                     key={link.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -175,9 +175,9 @@ export function Navbar() {
                     >
                       {link.name}
                     </a>
-                  </motion.li>
+                  </m.li>
                 ))}
-                <motion.li
+                <m.li
                   className="mt-2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -195,10 +195,10 @@ export function Navbar() {
                   >
                     προσφορα
                   </a>
-                </motion.li>
+                </m.li>
               </ul>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
@@ -206,6 +206,6 @@ export function Navbar() {
       <div
         className={`w-full h-px bg-ruler transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0"}`}
       ></div>
-    </motion.nav>
+    </m.nav>
   );
 }

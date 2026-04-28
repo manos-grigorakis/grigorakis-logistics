@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "framer-motion";
 import ContactForm from "../forms/ContactForm";
 
 export default function Contact() {
   return (
     <section id="contact" className="px-4 py-24 text-white bg-primary-700">
-      <motion.div
+      <m.div
         className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -29,7 +29,7 @@ export default function Contact() {
 
           {/* Info */}
           <ul className="mt-12">
-            <motion.li
+            <m.li
               className="py-4 border-b border-white/40"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -52,9 +52,9 @@ export default function Contact() {
                   </a>
                 </p>
               </div>
-            </motion.li>
+            </m.li>
 
-            <motion.li
+            <m.li
               className="py-4 border-b border-white/40"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -65,9 +65,9 @@ export default function Contact() {
                 εδρα
               </span>
               <p className="uppercase">ασπροπυργος θεση κουταλα, 19300</p>
-            </motion.li>
+            </m.li>
 
-            <motion.li
+            <m.li
               className="py-4 border-b border-white/40"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -78,12 +78,12 @@ export default function Contact() {
                 ωραριο
               </span>
               <p className="uppercase">δευ - παρ · 08:00 - 20:00</p>
-            </motion.li>
+            </m.li>
           </ul>
         </div>
 
         {/* Form */}
-        <motion.div
+        <m.div
           className="flex-1 overflow-hidden  px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -91,8 +91,8 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <ContactForm />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 }

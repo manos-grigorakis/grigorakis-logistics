@@ -1,7 +1,7 @@
 "use client";
 
 import Map from "@/components/ui/Map";
-import { motion } from "motion/react";
+import { m } from "framer-motion";
 import { useState } from "react";
 
 export default function Coverage() {
@@ -24,7 +24,7 @@ export default function Coverage() {
 
       <div className="max-w-6xl mx-auto">
         {/* Headers */}
-        <motion.span
+        <m.span
           className="text-xs block tracking-widest uppercase text-foreground/70"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,9 +32,9 @@ export default function Coverage() {
           viewport={{ once: true }}
         >
           καλυψη
-        </motion.span>
+        </m.span>
 
-        <motion.h2
+        <m.h2
           className="mt-2 text-4xl font-semibold uppercase"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function Coverage() {
           viewport={{ once: true }}
         >
           παντού στην <span className="text-primary-500">Ελλάδα</span>
-        </motion.h2>
+        </m.h2>
 
         {/* Content */}
         <div className="flex flex-col gap-12 mt-12 lg:items-center lg:flex-row">
@@ -56,7 +56,7 @@ export default function Coverage() {
             {/* Cities */}
             <ul className="mt-8">
               {cities.map((city, index) => (
-                <motion.li
+                <m.li
                   key={city}
                   className="py-2 font-medium capitalize border-b border-foreground/10 text-foreground/80"
                   initial={{ opacity: 0, x: -20 }}
@@ -69,13 +69,13 @@ export default function Coverage() {
                   viewport={{ once: true }}
                 >
                   {city}
-                </motion.li>
+                </m.li>
               ))}
             </ul>
           </div>
 
           {/* Map */}
-          <motion.div
+          <m.div
             className="w-full h-125 lg:flex-1"
             onViewportEnter={() => setInView(true)}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -84,7 +84,7 @@ export default function Coverage() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <Map inView={inView} />
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>
