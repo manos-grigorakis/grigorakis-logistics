@@ -141,8 +141,7 @@ export default function Footer() {
           <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
             Ωράριο
           </h5>
-          <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 20:00</p>
-          <div></div>
+          <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 17:00</p>
         </div>
       </m.div>
 
