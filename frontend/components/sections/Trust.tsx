@@ -1,8 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-const Marquee = dynamic(() => import("react-fast-marquee"), { ssr: false });
-
+import Marquee from "react-fast-marquee";
 import Image, { StaticImageData } from "next/image";
 
 import Zagori from "@/public/company-logos/zagori-logo.webp";
@@ -15,35 +13,15 @@ import ElkaGroup from "@/public/company-logos/elka-group.webp";
 
 export default function Trust() {
   const images: { image: StaticImageData; alt: string }[] = [
-    {
-      image: Intrakat,
-      alt: "Intrakat Logo",
-    },
-    {
-      image: Sklavenitis,
-      alt: "Sklavenitis Logo",
-    },
-    {
-      image: Vasilopoulos,
-      alt: "Vasilopoulos Logo",
-    },
-    {
-      image: Zagori,
-      alt: "Zagori Logo",
-    },
-    {
-      image: Vikos,
-      alt: "Vikos Logo",
-    },
-    {
-      image: DeltaTexniki,
-      alt: "Delta Texniki Logo",
-    },
-    {
-      image: ElkaGroup,
-      alt: "Elka Group Logo",
-    },
+    { image: Intrakat, alt: "Intrakat Logo" },
+    { image: Sklavenitis, alt: "Sklavenitis Logo" },
+    { image: Vasilopoulos, alt: "Vasilopoulos Logo" },
+    { image: Zagori, alt: "Zagori Logo" },
+    { image: Vikos, alt: "Vikos Logo" },
+    { image: DeltaTexniki, alt: "Delta Texniki Logo" },
+    { image: ElkaGroup, alt: "Elka Group Logo" },
   ];
+
   return (
     <section className="py-10">
       <div className="max-w-6xl mx-auto px-4">
@@ -53,7 +31,7 @@ export default function Trust() {
       </div>
 
       <div className="mt-12">
-        <Marquee autoFill={true}>
+        <Marquee autoFill={true} speed={40}>
           <div className="flex gap-8">
             {images.map((i, index) => (
               <div key={index} className="relative w-40 h-20">
