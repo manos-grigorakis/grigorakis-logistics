@@ -5,7 +5,7 @@ import {
 } from "@/app/lib/validation/contact-form-data";
 import InputField from "../ui/InputField";
 import { TRANSPORT_TYPES } from "@/data/transport-types";
-import { Turnstile } from "next-turnstile";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -270,6 +270,29 @@ export default function ContactForm() {
         <div>
           <Turnstile
             siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            options={{
+              theme: "light",
+              language: "el",
+              size: "normal",
+              retry: "auto",
+              refreshExpired: "auto",
+            }}
+            onError={() => {
+              setTurnstileStatus("error");
+              setError("Η επαλήθευση απέτυχε. Δοκιμάστε ξανά.");
+            }}
+            onExpire={() => {
+              setTurnstileStatus("expired");
+              setError("Η επαλήθευση έληξε. Παρακαλώ επαληθεύστε ξανά.");
+            }}
+            onSuccess={(token) => {
+              setTurnstileStatus("success");
+              turnstileRef.current = token;
+              setError(null);
+            }}
+          />
+          {/* <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
             theme="light"
             language="el"
             size="normal"
@@ -292,7 +315,7 @@ export default function ContactForm() {
               turnstileRef.current = token;
               setError(null);
             }}
-          />
+          /> */}
           {error && <p className="text-xs text-red-500">{error}</p>}
         </div>
 
