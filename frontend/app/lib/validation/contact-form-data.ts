@@ -16,7 +16,7 @@ export const ContactSchema = z.object({
   description: z
     .string()
     .min(10, "Περιγράψτε το φορτίο (τουλάχιστον 10 χαρακτήρες)"),
-  cfTurnstileResponse: z.string().min(1, "Captcha απαιτείται"),
+  recaptchaToken: z.string().min(1, "reCAPTCHA απαιτείται"),
 });
 
 export type ContactFormData = z.infer<typeof ContactSchema>;
