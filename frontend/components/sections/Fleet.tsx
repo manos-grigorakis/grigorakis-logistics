@@ -6,6 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 const Lightbox = dynamic(() => import("yet-another-react-lightbox"), {
   ssr: false,
+  loading: () => null,
 });
 import "yet-another-react-lightbox/styles.css";
 
@@ -67,29 +68,31 @@ export default function Fleet() {
           ))}
         </div>
 
-        {/* Lightbox */}
-        <Lightbox
-          open={index >= 0}
-          index={index}
-          close={() => setIndex(-1)}
-          slides={images}
-          styles={{
-            root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.85)" },
-            container: { backgroundColor: "rgba(0, 0, 0, 0.85)" },
-          }}
-          render={{
-            slide: ({ slide }) => (
-              <div className="relative w-full h-full">
-                <Image
-                  fill
-                  src={slide.src}
-                  alt={slide.alt || "Fleet image"}
-                  className="object-contain"
-                />
-              </div>
-            ),
-          }}
-        />
+        {/* Lightbox - only rendered when open */}
+        {index >= 0 && (
+          <Lightbox
+            open={index >= 0}
+            index={index}
+            close={() => setIndex(-1)}
+            slides={images}
+            styles={{
+              root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.85)" },
+              container: { backgroundColor: "rgba(0, 0, 0, 0.85)" },
+            }}
+            render={{
+              slide: ({ slide }) => (
+                <div className="relative w-full h-full">
+                  <Image
+                    fill
+                    src={slide.src}
+                    alt={slide.alt || "Fleet image"}
+                    className="object-contain"
+                  />
+                </div>
+              ),
+            }}
+          />
+        )}
       </div>
     </section>
   );

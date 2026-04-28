@@ -1,30 +1,17 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-const CountUp = dynamic(() => import("react-countup"), {
-  ssr: false,
-  loading: () => <span>0</span>,
-});
-import { m } from "framer-motion";
+import { useRef } from "react";
+import { m, useInView } from "framer-motion";
+import CountUp from "react-countup";
 
 export default function Hero() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(statsRef, { once: true });
+
   const stats: { header: number; symbol: string; value: string }[] = [
-    {
-      header: 25,
-      symbol: "+",
-      value: "έτη εμπειρίας",
-    },
-    {
-      header: 10_000,
-      symbol: "+",
-      value: "παραδόσεις",
-    },
-    {
-      header: 99,
-      symbol: "%",
-      value: "έγκαιρες παραδόσεις",
-    },
+    { header: 25, symbol: "+", value: "έτη εμπειρίας" },
+    { header: 10_000, symbol: "+", value: "παραδόσεις" },
+    { header: 99, symbol: "%", value: "έγκαιρες παραδόσεις" },
   ];
 
   // Animations
@@ -122,7 +109,10 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
+        <div
+          ref={statsRef}
+          className="flex flex-col items-center gap-4 sm:flex-row"
+        >
           {stats.map((item, index) => (
             <m.div
               key={item.header}
@@ -141,13 +131,22 @@ export default function Hero() {
 
               <div className="text-center capitalize">
                 <span className="text-lg font-bold sm:text-2xl">
-                  {" "}
-                  <CountUp
-                    end={item.header}
-                    duration={1.5}
-                    separator="."
-                    delay={0.8 + index * 0.15}
-                  />
+                  {isInView ? (
+                    <CountUp
+                      start={0}
+                      end={item.header}
+                      duration={2}
+                      separator="."
+                      useEasing={true}
+                      easingFn={(t, b, c, d) => {
+                        t /= d;
+                        t--;
+                        return c * (t * t * t + 1) + b;
+                      }}
+                    />
+                  ) : (
+                    <span>0</span>
+                  )}
                   {item.symbol}
                 </span>
                 <p className="text-sm font-light text-foreground/70">
