@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 const Marquee = dynamic(() => import("react-fast-marquee"), { ssr: false });
 
