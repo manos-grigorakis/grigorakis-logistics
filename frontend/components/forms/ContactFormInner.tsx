@@ -284,11 +284,19 @@ export default function ContactFormInner() {
 
         <p className="text-xs text-foreground/40 text-center">
           This site is protected by reCAPTCHA and the Google{" "}
-          <a href="https://policies.google.com/privacy" className="underline">
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            className="underline"
+          >
             Privacy Policy
           </a>{" "}
           and{" "}
-          <a href="https://policies.google.com/terms" className="underline">
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            className="underline"
+          >
             Terms of Service
           </a>{" "}
           apply.
