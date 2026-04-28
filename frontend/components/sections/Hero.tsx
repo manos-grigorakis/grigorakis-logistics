@@ -6,7 +6,7 @@ const CountUp = dynamic(() => import("react-countup"), {
   ssr: false,
   loading: () => <span>0</span>,
 });
-import { motion } from "motion/react";
+import { m } from "framer-motion";
 
 export default function Hero() {
   const stats: { header: number; symbol: string; value: string }[] = [
@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section className="relative flex items-center justify-around px-4 overflow-hidden min-h-lvh">
       {/* Background */}
-      <motion.div
+      <m.div
         className="absolute z-0 pointer-events-none inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"
         initial={{ opacity: 0.6 }}
         animate={{
@@ -51,7 +51,7 @@ export default function Hero() {
       />
 
       <div className="flex flex-col items-center justify-center text-center">
-        <motion.span
+        <m.span
           className="text-sm tracking-wider uppercase"
           initial={{ opacity: 0, y: -10 }}
           animate={{
@@ -61,23 +61,23 @@ export default function Hero() {
           }}
         >
           ~ εθνικες μεταφορες ~
-        </motion.span>
+        </m.span>
 
-        <motion.h1
+        <m.h1
           className="max-w-2xl mt-2 mb-10 text-4xl font-bold leading-tight md:text-7xl"
           variants={container}
           initial="hidden"
           animate="show"
         >
-          <motion.span variants={line} className="block">
+          <m.span variants={line} className="block">
             Από άκρη σε άκρη της
-          </motion.span>
-          <motion.span variants={line} className="block text-primary-500">
+          </m.span>
+          <m.span variants={line} className="block text-primary-500">
             Ελλάδας
-          </motion.span>
-        </motion.h1>
+          </m.span>
+        </m.h1>
 
-        <motion.p
+        <m.p
           className="max-w-md text-foreground/70"
           initial={{ opacity: 0, y: 20 }}
           animate={{
@@ -90,11 +90,11 @@ export default function Hero() {
           <span className="font-bold text-primary-500">Γρηγοράκης</span>{" "}
           αναλαμβάνει μεταφορές σε όλη την Ελλάδα, με συνέπεια, ασφάλεια και
           άμεση εξυπηρέτηση.
-        </motion.p>
+        </m.p>
 
         {/* CTA */}
         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
-          <motion.a
+          <m.a
             href="#contact"
             className="px-5 block py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
             initial={{ x: -40, opacity: 0 }}
@@ -105,9 +105,9 @@ export default function Hero() {
             }}
           >
             Ζητηστε προσφορα
-          </motion.a>
+          </m.a>
 
-          <motion.a
+          <m.a
             href="#services"
             className="px-5 block py-4 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
             initial={{ x: 40, opacity: 0 }}
@@ -118,13 +118,13 @@ export default function Hero() {
             }}
           >
             Δειτε υπηρεσιες
-          </motion.a>
+          </m.a>
         </div>
 
         {/* Stats */}
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           {stats.map((item, index) => (
-            <motion.div
+            <m.div
               key={item.header}
               className="flex items-center"
               initial={{ opacity: 0, y: 20 }}
@@ -154,7 +154,7 @@ export default function Hero() {
                   {item.value}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

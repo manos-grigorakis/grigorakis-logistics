@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { LuArrowDown } from "react-icons/lu";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "framer-motion";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -41,7 +41,7 @@ export default function Faq() {
   return (
     <section id="faqs" className="px-4 py-24">
       <div className="max-w-6xl mx-auto">
-        <motion.span
+        <m.span
           className="block text-xs tracking-widest uppercase text-foreground/70"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,9 +49,9 @@ export default function Faq() {
           viewport={{ once: true }}
         >
           συχνες ερωτησεις
-        </motion.span>
+        </m.span>
 
-        <motion.h2
+        <m.h2
           className="mt-2 mb-12 text-4xl font-semibold uppercase"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function Faq() {
           viewport={{ once: true }}
         >
           εχετε <span className="text-primary-500">απορια;</span>
-        </motion.h2>
+        </m.h2>
 
         {/* Faqs */}
 
@@ -68,7 +68,7 @@ export default function Faq() {
             const isOpen = openIndex === index;
 
             return (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export default function Faq() {
                 </h2>
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       key="content"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -110,10 +110,10 @@ export default function Faq() {
                       <div className="py-5 border-b border-b-foreground/50">
                         <p className="mb-2 text-sm">{i.answer}</p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

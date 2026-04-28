@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "framer-motion";
 
 const lines = [
   { x1: 370, y1: 175, x2: 390, y2: 310 }, // Thessaloniki → Athens
@@ -131,7 +131,7 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
 
       <g stroke="#125aa2" strokeOpacity="0.18" strokeWidth="1" fill="none">
         {lines.map((line, index) => (
-          <motion.line
+          <m.line
             key={index}
             x1={line.x1}
             y1={line.y1}
@@ -181,7 +181,7 @@ export default function GreeceMap({ inView }: { inView: boolean }) {
             />
           </circle>
 
-          <motion.circle
+          <m.circle
             cx={city.x}
             cy={city.y}
             r="3.5"

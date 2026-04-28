@@ -9,7 +9,7 @@ import {
   LuBoxes,
   LuWarehouse,
 } from "react-icons/lu";
-import { motion } from "motion/react";
+import { m } from "framer-motion";
 
 export default function Services() {
   const data: {
@@ -58,7 +58,7 @@ export default function Services() {
   return (
     <section id="services" className="px-4 py-24 text-white bg-foreground">
       <div className="max-w-6xl mx-auto">
-        <motion.span
+        <m.span
           className="text-xs block tracking-widest uppercase text-white/60"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,9 +66,9 @@ export default function Services() {
           viewport={{ once: true }}
         >
           τι κάνουμε
-        </motion.span>
+        </m.span>
 
-        <motion.h2
+        <m.h2
           className="mt-2 mb-12 text-4xl font-semibold uppercase"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,14 +76,14 @@ export default function Services() {
           viewport={{ once: true }}
         >
           οι <span className="text-primary-500">υπηρεσιες</span> μας
-        </motion.h2>
+        </m.h2>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {data.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <motion.li
+              <m.li
                 key={index}
                 className="px-6 py-8 transition-colors duration-200 border border-white/10 hover:bg-white/5"
                 whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ export default function Services() {
                 <p className="mt-2 text-sm leading-relaxed text-ruler">
                   {item.description}
                 </p>
-              </motion.li>
+              </m.li>
             );
           })}
         </ul>

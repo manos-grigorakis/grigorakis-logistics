@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -31,9 +32,11 @@ export default function RootLayout({
       className={`${dmSans.variable} ${barlowCondensed.variable} h-full antialiased scroll-smooth`}
     >
       <body className="flex flex-col min-h-full">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <LazyMotion features={domAnimation}>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </LazyMotion>
 
         {/* Analytics */}
         {process.env.NODE_ENV === "production" && (
