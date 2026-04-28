@@ -5,7 +5,7 @@ import {
 } from "@/app/lib/validation/contact-form-data";
 import InputField from "../ui/InputField";
 import { TRANSPORT_TYPES } from "@/data/transport-types";
-import { Turnstile } from "@marsidev/react-turnstile";
+// import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -267,7 +267,7 @@ export default function ContactForm() {
         </div>
 
         {/* Cloudflare captcha */}
-        <div>
+        {/* <div>
           <Turnstile
             siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
             options={{
@@ -292,7 +292,7 @@ export default function ContactForm() {
             }}
           />
           {error && <p className="text-xs text-red-500">{error}</p>}
-        </div>
+        </div> */}
 
         {/* Submit button */}
         <button
