@@ -3,9 +3,9 @@ import "./globals.css";
 export { metadata } from "./metadata";
 import { Navbar } from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { GoogleAnalytics } from "@next/third-parties/google";
+// import { Analytics } from "@vercel/analytics/next";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LazyMotion, domMax } from "framer-motion";
 
 const dmSans = DM_Sans({
@@ -39,11 +39,11 @@ export default function RootLayout({
         </LazyMotion>
 
         {/* Analytics */}
-        {process.env.NODE_ENV === "production" && (
+        {/* {process.env.NODE_ENV === "production" && (
           <GoogleAnalytics gaId="G-YL947VHQXY" />
         )}
         <Analytics />
-        <SpeedInsights />
+        <SpeedInsights /> */}
       </body>
     </html>
   );
