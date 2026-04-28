@@ -1,11 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-const CountUp = dynamic(() => import("react-countup"), {
-  ssr: false,
-  loading: () => <span>0</span>,
-});
+// const CountUp = dynamic(() => import("react-countup"), {
+//   ssr: false,
+//   loading: () => <span>0</span>,
+// });
 import { m } from "framer-motion";
 
 export default function Hero() {
@@ -114,7 +114,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
+        {/* <div className="flex flex-col items-center gap-4 sm:flex-row">
           {stats.map((item, index) => (
             <m.div
               key={item.header}
@@ -148,7 +148,7 @@ export default function Hero() {
               </div>
             </m.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
