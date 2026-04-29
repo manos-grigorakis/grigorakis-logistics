@@ -52,7 +52,7 @@ export default function ContactNotification({
                 ΓΡΗΓΟΡΑΚΗΣ
               </Text>
               <Text className="text-primary text-xs tracking-widest m-0 mt-0.5">
-                LOGISTICS
+                ΜΕΤΑΦΟΡΙΚΗ & LOGISTICS
               </Text>
             </Section>
 
@@ -151,7 +151,7 @@ export default function ContactNotification({
             <Hr className="mx-10 my-0 border-gray-100" />
             <Section className="px-10 py-6 text-center">
               <Text className="m-0 mb-1 text-xs font-bold tracking-widest text-foreground">
-                ΓΡΗΓΟΡΑΚΗΣ LOGISTICS
+                ΓΡΗΓΟΡΑΚΗΣ ΜΕΤΑΦΟΡΙΚΗ & LOGISTICS
               </Text>
               <Text className="m-0 text-xs text-gray-400">
                 Αυτό το email δημιουργήθηκε αυτόματα από τη φόρμα επικοινωνίας.

@@ -151,7 +151,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="flex flex-col items-center justify-between max-w-6xl gap-2 mx-auto mt-6 text-xs md:flex-row text-white/60">
         <p className="mb-2">
-          © {currentYear} Grigorakis Logistics. All rights reserved
+          © {currentYear} Γρηγοράκης Μεταφορική. All rights reserved
         </p>
         <p>
           Built by{" "}

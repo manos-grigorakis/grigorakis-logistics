@@ -1,6 +1,6 @@
 import { DM_Sans, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
-export { metadata } from "./metadata";
+export { metadata } from "./lib/seo/metadata";
 import { Navbar } from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
