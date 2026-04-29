@@ -77,7 +77,7 @@ export default function Contact() {
               <span className="text-lg font-medium uppercase font-heading text-white/80">
                 ωραριο
               </span>
-              <p className="uppercase">δευ - παρ · 08:00 - 20:00</p>
+              <p className="uppercase">δευ - παρ · 08:00 - 17:00</p>
             </m.li>
           </ul>
         </div>
