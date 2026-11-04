@@ -1,3 +1,3 @@
-export default function SpeciesCargo() {
+export default function SpeciesCargoPage() {
     return 'Hello from species cargo'
 }
