@@ -151,6 +151,7 @@ export function ContainersContent() {
                     </div>
                 </div>
 
+                {/* Our Services */}
                 <OurServiceList currentServiceRoute="/services/containers"/>
 
                 {/* CTA */}
@@ -166,7 +167,7 @@ export function ContainersContent() {
 
 
                     <Link href="/#contact"
-                          className="px-5 block mt-9 py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-foreground hover:cursor-pointer hover:bg-foreground/80">
+                          className="px-5 block py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-foreground hover:cursor-pointer hover:bg-foreground/80">
                         Ζητήστε προσφορά
                     </Link>
                 </div>

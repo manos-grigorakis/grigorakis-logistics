@@ -76,6 +76,7 @@ export function SpecialCargoContents() {
                     </ul>
                 </div>
 
+                {/* Highlights */}
                 <div className="p-8 bg-primary-800">
                     <h2 className="text-2xl font-semibold mb-4 text-white">Κάθε φορτίο, δικό του σχέδιο</h2>
 
