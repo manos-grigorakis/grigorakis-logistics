@@ -4,6 +4,7 @@ import {LuContainer, LuHardHat, LuShip, LuTruck, LuWarehouse} from "react-icons/
 import Image from "next/image";
 import Link from "next/link";
 import {Breadcrumbs} from "@/components/ui/Breadcrumbs";
+import {ServiceCTA} from "@/components/services/ServiceCTA";
 
 
 export function ContainersContent() {
@@ -155,22 +156,11 @@ export function ContainersContent() {
                 <OurServiceList currentServiceRoute="/services/containers"/>
 
                 {/* CTA */}
-                <div
-                    className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between bg-primary-500 p-8 md:p-12 lg:p-14 text-white">
-                    <div>
-                        <h2 className="text-2xl mb-4 font-semibold">Ενδιαφέρεστε για αγορά ή μεταφορά container;</h2>
-                        <p className="text-xs max-w-lg leading-relaxed">
-                            Επικοινωνήστε μαζί μας για πληροφορίες σχετικά με την αγορά containers ή για να
-                            συζητήσουμε τις ανάγκες της μεταφοράς σας.
-                        </p>
-                    </div>
-
-
-                    <Link href="/#contact"
-                          className="px-5 block py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-foreground hover:cursor-pointer hover:bg-foreground/80">
-                        Ζητήστε προσφορά
-                    </Link>
-                </div>
+                <ServiceCTA
+                    title="Ενδιαφέρεστε για αγορά ή μεταφορά container;"
+                    description="Επικοινωνήστε μαζί μας για πληροφορίες σχετικά με την αγορά containers ή για να
+                            συζητήσουμε τις ανάγκες της μεταφοράς σας."
+                />
             </div>
         </section>
     )

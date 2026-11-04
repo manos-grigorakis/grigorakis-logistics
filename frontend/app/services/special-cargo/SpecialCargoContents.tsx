@@ -4,6 +4,7 @@ import Image from "next/image";
 import VolvoTruckSpecialCargo from '@/public/services/volvo_truck_special_cargo.webp'
 import {features, transportHighlights} from "./special-cargo.data";
 import {OurServiceList} from "@/components/services/OurServiceList";
+import {ServiceCTA} from "@/components/services/ServiceCTA";
 
 export function SpecialCargoContents() {
     return (
@@ -107,22 +108,12 @@ export function SpecialCargoContents() {
                 <OurServiceList currentServiceRoute="/services/special-cargo"/>
 
                 {/* CTA */}
-                <div
-                    className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between bg-primary-500 p-8 md:p-12 lg:p-14 text-white">
-                    <div>
-                        <h2 className="text-2xl mb-4 font-semibold">Χρειάζεστε μεταφορά ειδικού ή ογκώδους φορτίου;</h2>
-                        <p className="text-xs max-w-lg leading-relaxed">
-                            Επικοινωνήστε μαζί μας για να συζητήσουμε τις απαιτήσεις
+                <ServiceCTA
+                    title="Χρειάζεστε μεταφορά ειδικού ή ογκώδους φορτίου;"
+                    description="Επικοινωνήστε μαζί μας για να συζητήσουμε τις απαιτήσεις
                             του φορτίου σας και να βρούμε την κατάλληλη λύση μεταφοράς,
-                            με έμφαση στην ασφάλεια και την αξιοπιστία.
-                        </p>
-                    </div>
-
-                    <Link href="/#contact"
-                          className="px-5 block  py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-foreground hover:cursor-pointer hover:bg-foreground/80">
-                        Ζητήστε προσφορά
-                    </Link>
-                </div>
+                            με έμφαση στην ασφάλεια και την αξιοπιστία."
+                />
             </div>
         </section>
     )

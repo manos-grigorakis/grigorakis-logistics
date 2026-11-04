@@ -4,6 +4,7 @@ import Image from "next/image";
 import {cities, features, locations} from "@/app/services/road-transport/road-transport.data";
 import {OurServiceList} from "@/components/services/OurServiceList";
 import {LuMapPin} from "react-icons/lu";
+import {ServiceCTA} from "@/components/services/ServiceCTA";
 
 export function RoadTransportContents() {
     return (
@@ -131,21 +132,11 @@ export function RoadTransportContents() {
                 <OurServiceList currentServiceRoute="/services/road-transport"/>
 
                 {/* CTA */}
-                <div
-                    className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between bg-primary-500 p-8 md:p-12 lg:p-14 text-white">
-                    <div>
-                        <h2 className="text-2xl mb-4 font-semibold">Χρειάζεστε μεταφορά εμπορευμάτων;</h2>
-                        <p className="text-xs max-w-lg leading-relaxed">
-                            Επικοινωνήστε με τη Γρηγοράκης Μεταφορική για να συζητήσουμε τις ανάγκες της αποστολής σας
-                            και να σας προτείνουμε την κατάλληλη λύση οδικής μεταφοράς.
-                        </p>
-                    </div>
-
-                    <Link href="/#contact"
-                          className="px-5 block  py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-foreground hover:cursor-pointer hover:bg-foreground/80">
-                        Ζητήστε προσφορά
-                    </Link>
-                </div>
+                <ServiceCTA
+                    title="Χρειάζεστε μεταφορά εμπορευμάτων;"
+                    description=" Επικοινωνήστε με τη Γρηγοράκης Μεταφορική για να συζητήσουμε τις ανάγκες της αποστολής σας
+                            και να σας προτείνουμε την κατάλληλη λύση οδικής μεταφοράς."
+                />
             </div>
         </section>
     )
