@@ -1,4 +1,4 @@
-import OurServiceList from "@/components/sections/our-services-list";
+import {OurServiceList} from "@/components/services/OurServiceList";
 import {IconType} from "react-icons";
 import {LuContainer, LuHardHat, LuShip, LuTruck, LuWarehouse} from "react-icons/lu";
 import Image from "next/image";

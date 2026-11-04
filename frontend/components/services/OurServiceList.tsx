@@ -6,7 +6,7 @@ type Props = {
     currentServiceRoute: string;
 }
 
-export default function OurServiceList({currentServiceRoute}: Props) {
+export function OurServiceList({currentServiceRoute}: Props) {
     return (
         <div>
             <h2 className="text-2xl mb-4 font-semibold">Δείτε και τις υπόλοιπες υπηρεσίας μας</h2>

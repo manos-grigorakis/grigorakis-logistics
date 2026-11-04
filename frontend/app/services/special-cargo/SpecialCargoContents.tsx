@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VolvoTruckSpecialCargo from '@/public/services/volvo_truck_special_cargo.webp'
 import {features, transportHighlights} from "./special-cargo.data";
-import OurServiceList from "@/components/sections/our-services-list";
+import {OurServiceList} from "@/components/services/OurServiceList";
 
 export function SpecialCargoContents() {
     return (

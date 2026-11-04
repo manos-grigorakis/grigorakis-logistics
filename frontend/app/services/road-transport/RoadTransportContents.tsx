@@ -2,7 +2,7 @@ import {Breadcrumbs} from "@/components/ui/Breadcrumbs";
 import Link from "next/link";
 import Image from "next/image";
 import {cities, features, locations} from "@/app/services/road-transport/road-transport.data";
-import OurServiceList from "@/components/sections/our-services-list";
+import {OurServiceList} from "@/components/services/OurServiceList";
 import {LuMapPin} from "react-icons/lu";
 
 export function RoadTransportContents() {
