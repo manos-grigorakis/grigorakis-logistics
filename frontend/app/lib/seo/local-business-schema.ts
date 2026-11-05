@@ -33,6 +33,8 @@ export const localBusinessJsonLd = {
         "https://www.vrisko.gr/details/daaida6g6e6k0k6463c17506560e___j"
     ],
 
+    hasMap: "https://maps.app.goo.gl/gAaSxabugeHoBN7p6",
+
     openingHoursSpecification: [
         {
             "@type": "OpeningHoursSpecification",
