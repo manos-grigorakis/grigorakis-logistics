@@ -1,124 +1,74 @@
 "use client";
 
-import { IconType } from "react-icons";
-import {
-  LuTruck,
-  LuPackage,
-  LuContainer,
-  LuForklift,
-  LuBoxes,
-  LuWarehouse,
-} from "react-icons/lu";
-import { m } from "framer-motion";
+import {servicesLinks} from "@/data/services-links.types";
+import {m} from "framer-motion";
+import Link from "next/link";
 
 export default function Services() {
-  const data: {
-    icon: IconType;
-    title: string;
-    description: string;
-  }[] = [
-    {
-      icon: LuTruck,
-      title: "οδικές μεταφορές",
-      description:
-        "Μεταφορά εμπορευμάτων σε όλη την Ελλάδα με επικαθήμενα και ψυκτικά οχήματα. Τακτικά δρομολόγια, συνεπείς παραδόσεις.",
-    },
-    {
-      icon: LuPackage,
-      title: "μερική φόρτωση (LTL)",
-      description:
-        "Το φορτίο σας μοιράζεται χώρο με άλλες αποστολές προς τον ίδιο προορισμό. Λιγότερο κόστος, ίδια αξιοπιστία.",
-    },
-    {
-      icon: LuContainer,
-      title: "containers (πώληση & μεταφορά)",
-      description:
-        "Εμπορία, πώληση και μεταφορά containers από και προς λιμάνια, εργοτάξια και αποθήκες με κατάλληλα επικαθήμενα και εμπειρία στη διαχείριση βαρέων φορτίων.",
-    },
-    {
-      icon: LuForklift,
-      title: "ειδικές μεταφορές",
-      description:
-        "Αναλαμβάνουμε μεταφορές που απαιτούν εξειδικευμένο εξοπλισμό και εμπειρία.",
-    },
-    {
-      icon: LuBoxes,
-      title: "μετακομίσεις",
-      description:
-        "Οικιακές και επαγγελματικές μετακομίσεις με εξειδικευμένο εξοπλισμό και έμπειρο προσωπικό.",
-    },
-    {
-      icon: LuWarehouse,
-      title: "αποθήκευση",
-      description:
-        "Βραχυπρόθεσμη αποθήκευση εμπορευμάτων για επιχειρήσεις που χρειάζονται ευελιξία στη διαχείριση αποθέματος.",
-    },
-  ];
+    return (
+        <section id="services" className="px-4 py-24 text-white bg-foreground">
+            <div className="max-w-6xl mx-auto">
+                <m.span
+                    className="text-xs block tracking-widest uppercase text-white/60"
+                    initial={{opacity: 0, y: -20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.8, delay: 0.4, ease: "easeOut"}}
+                    viewport={{once: true}}
+                >
+                    τι κάνουμε
+                </m.span>
 
-  return (
-    <section id="services" className="px-4 py-24 text-white bg-foreground">
-      <div className="max-w-6xl mx-auto">
-        <m.span
-          className="text-xs block tracking-widest uppercase text-white/60"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          τι κάνουμε
-        </m.span>
+                <m.h2
+                    className="mt-2 mb-12 text-4xl font-semibold uppercase"
+                    initial={{opacity: 0, y: -20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.8, ease: "easeOut"}}
+                    viewport={{once: true}}
+                >
+                    οι <span className="text-primary-500">υπηρεσιες</span> μας
+                </m.h2>
 
-        <m.h2
-          className="mt-2 mb-12 text-4xl font-semibold uppercase"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          οι <span className="text-primary-500">υπηρεσιες</span> μας
-        </m.h2>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    {servicesLinks.map((item, index) => {
+                        const Icon = item.icon;
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((item, index) => {
-            const Icon = item.icon;
+                        return (
+                            <m.li
+                                key={index}
+                                className="border border-white/10"
+                                whileInView={{opacity: 1, y: 0}}
+                                initial={{opacity: 0, y: 40}}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                    ease: "easeOut",
+                                }}
+                                viewport={{once: true}}
+                            >
+                                <Link href={item.href}
+                                      className="group block h-full px-6 py-8 transition-colors duration-200 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-primary-500">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center justify-center size-10 bg-primary-500">
+                                            <Icon
+                                                className="size-5 text-white"
+                                                aria-hidden="true"
+                                            />
+                                        </div>
 
-            return (
-              <m.li
-                key={index}
-                className="px-6 py-8 transition-colors duration-200 border border-white/10 hover:bg-white/5"
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 40 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center justify-center w-10 h-10 bg-primary-500">
-                    <Icon
-                      className="w-5 h-5 text-white"
-                      aria-label={`${item.title} icon`}
-                    />
-                  </div>
+                                        <span className="block text-sm text-ruler/50">{index + 1}</span>
+                                    </div>
 
-                  <span className="block text-sm text-ruler/50">
-                    {index + 1}
-                  </span>
-                </div>
 
-                <h4 className="mt-5 text-lg font-semibold capitalize">
-                  {item.title}
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-ruler">
-                  {item.description}
-                </p>
-              </m.li>
-            );
-          })}
-        </ul>
-      </div>
-    </section>
-  );
+                                    <h3 className="mt-5 text-lg font-semibold">{item.label}</h3>
+                                    <p className="mt-2 text-sm leading-relaxed text-ruler">
+                                        {item.description}
+                                    </p>
+                                </Link>
+                            </m.li>
+                        );
+                    })}
+                </ul>
+            </div>
+        </section>
+    );
 }
