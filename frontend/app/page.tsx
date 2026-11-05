@@ -1,4 +1,5 @@
-import { localBusinessJsonLd } from "./lib/seo/local-business-schema";
+import type {Metadata} from 'next';
+import {localBusinessJsonLd} from "./lib/seo/local-business-schema";
 
 import Hero from "@/components/sections/Hero";
 import Trust from "@/components/sections/Trust";
@@ -9,24 +10,28 @@ import Fleet from "@/components/sections/Fleet";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 
-export default function Home() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
+export const metadata: Metadata = {
+    alternates: {canonical: "/"}
+}
 
-      <Hero />
-      <Trust />
-      <Services />
-      <Coverage />
-      <Process />
-      <Fleet />
-      <Faq />
-      <Contact />
-    </>
-  );
+export default function Home() {
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
+                }}
+            />
+
+            <Hero/>
+            <Trust/>
+            <Services/>
+            <Coverage/>
+            <Process/>
+            <Fleet/>
+            <Faq/>
+            <Contact/>
+        </>
+    );
 }
