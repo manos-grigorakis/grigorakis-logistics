@@ -43,7 +43,7 @@ export default function Footer() {
             >
                 {/* Brand */}
                 <div className="flex flex-col justify-start">
-                    <div className="text-sm leading-relaxed text-white/50">
+                    <div className="text-sm leading-relaxed text-white/50" data-nosnippet>
                         <p>
                             Μέλος του{" "}
                             <a
@@ -55,8 +55,16 @@ export default function Footer() {
                                 Δικτύου Μεταφορών Γρηγοράκης
                             </a>
                         </p>
-                        <p className="mt-2">Θέση Κουταλά, Ασπρόπυργος 19300</p>
-                        <p>Αττική, Ελλάδα</p>
+                        <a
+                            href="https://maps.app.goo.gl/gAaSxabugeHoBN7p6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block mt-2 transition-colors hover:text-primary-500"
+                        >
+                            Θέση Κουταλά, Ασπρόπυργος 19300
+                            <br/>
+                            Αττική, Ελλάδα
+                        </a>
 
                         {/* Logo */}
                         <Link
@@ -77,9 +85,9 @@ export default function Footer() {
 
                 {/* Services */}
                 <div>
-                    <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
+                    <p className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
                         υπηρεσιες
-                    </h5>
+                    </p>
 
                     <ul className="flex flex-col gap-2 text-xs uppercase">
                         {servicesLinks.map((service) => (
@@ -95,9 +103,9 @@ export default function Footer() {
 
                 {/* Sitemap */}
                 <div>
-                    <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
+                    <p className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
                         sitemap
-                    </h5>
+                    </p>
 
                     <ul className="flex flex-col gap-2 text-xs uppercase">
                         {navLinks.map((link) => (
@@ -112,13 +120,19 @@ export default function Footer() {
                 </div>
 
                 {/* Contact & Hours */}
-                <div>
+                <div data-nosnippet>
                     {/* Contact */}
-                    <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
+                    <p className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
                         επικοινωνία
-                    </h5>
+                    </p>
 
                     <div className="flex flex-col gap-2 mb-8 text-sm text-white/50">
+                        <a
+                            href="tel:+306973392007"
+                            className="transition-colors hover:text-primary-500"
+                        >
+                            +30 6973392007
+                        </a>
                         <a
                             href="mailto:info@grigorakis-logistics.gr"
                             className="transition-colors hover:text-primary-500"
@@ -134,9 +148,9 @@ export default function Footer() {
                     </div>
 
                     {/* Hours */}
-                    <h5 className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
+                    <p className="mb-4 text-sm font-semibold tracking-widest uppercase text-white/60">
                         Ωράριο
-                    </h5>
+                    </p>
                     <p className="text-sm text-white/50">Δευ – Παρ · 08:00 – 17:00</p>
                 </div>
             </m.div>
@@ -155,6 +169,7 @@ export default function Footer() {
                     <a
                         href="https://manosgrigorakis.com"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="transition-colors hover:text-primary-500"
                     >
                         Manos Grigorakis
