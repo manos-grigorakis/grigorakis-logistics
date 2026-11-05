@@ -37,7 +37,10 @@ export function MobileNav({isOpen, setIsOpen}: Props) {
     return (
         <>
             <div className="flex items-center justify-between lg:hidden">
-                <Link href="/" onClick={closeMenu}>
+                <Link href="/" onClick={() => {
+                    closeMenu();
+                    window.scrollTo({top: 0, behavior: "smooth"});
+                }}>
                     <Image
                         src={Logo}
                         alt="Grigorakis Logistics"
