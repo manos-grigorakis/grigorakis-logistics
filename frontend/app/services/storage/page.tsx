@@ -5,8 +5,7 @@ export const metadata: Metadata = {
     title: "Αποθήκευση Εμπορευμάτων & Logistics",
     description: "Λύσεις αποθήκευσης εμπορευμάτων και logistics μέσω συνεργαζόμενου δικτύου σε Αττική και Κρήτη. Οδικές μεταφορές και διανομή από τη Γρηγοράκης Μεταφορική.",
     alternates: {
-        canonical:
-            "https://grigorakis-logistics.gr/services/storage",
+        canonical: "https://grigorakis-logistics.gr/services/storage",
     },
 };
 
