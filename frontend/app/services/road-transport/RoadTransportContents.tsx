@@ -84,9 +84,9 @@ export function RoadTransportContents() {
                 <div className="p-6 md:p-10 bg-primary-800">
                     <div className="mb-8">
                         <h2 className="text-2xl font-semibold text-white">Πανελλαδική κάλυψη μεταφορών</h2>
-                        <p className="text-sm mt-2 text-primary-200">Με αφετηρία την έδρα μας στον Ασπρόπυργο και τη
-                            συνεργασία του δικτύου μας σε Αθήνα και Κρήτη, εξυπηρετούμε μεταφορές εμπορευμάτων σε όλη
-                            την Ελλάδα.</p>
+                        <p className="text-sm mt-2 text-primary-200">Από τις εγκαταστάσεις μας στον Ασπρόπυργο,
+                            συντονίζουμε μεταφορές εμπορευμάτων σε όλη την Ελλάδα σε συνεργασία με το Δίκτυο Μεταφορών
+                            Γρηγοράκης.</p>
                     </div>
 
 

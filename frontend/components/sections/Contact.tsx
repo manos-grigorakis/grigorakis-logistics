@@ -79,7 +79,7 @@ export default function Contact() {
                                 viewport={{once: true}}
                             >
                 <span className="text-lg font-medium uppercase font-heading text-white/80">
-                  εδρα
+                  εγκαταστασεις μας
                 </span>
                                 <a href="https://maps.app.goo.gl/gAaSxabugeHoBN7p6" target="_blank"
                                    rel="noopener noreferrer" className="block uppercase hover:underline">ασπροπυργος

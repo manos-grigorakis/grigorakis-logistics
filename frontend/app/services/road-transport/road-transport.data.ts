@@ -25,9 +25,9 @@ export const features: { icon: IconType, title: string, description: string }[] 
 ]
 
 export const locations: { label: string, name: string, icon: IconType, main?: boolean }[] = [
-    {label: "Κεντρική έδρα", name: "Ασπρόπυργος", icon: LuBuilding2, main: true},
-    {label: "Υποκατάστημα Αθήνας", name: "Μοσχάτο", icon: LuWarehouse},
-    {label: "Υποκατάστημα Κρήτης", name: "Κρήτη", icon: LuWarehouse},
+    {label: "Εγκαταστάσεις μας", name: "Ασπρόπυργος", icon: LuBuilding2, main: true},
+    {label: "Σημείο δικτύου", name: "Μοσχάτο Αττικής", icon: LuWarehouse},
+    {label: "Σημείο δικτύου", name: "Άγιος Νικόλαος Κρήτης", icon: LuWarehouse},
 ]
 
 export const cities: string[] = ["Αθήνα", "Θεσσαλονίκη", "Πάτρα", "Ηράκλειο", "Ιωάννινα", "Κέρκυρα", "Πρέβεζα"]
