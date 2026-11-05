@@ -12,7 +12,7 @@ type Props = {
 
 export function Breadcrumbs({items}: Props) {
     return (
-        <nav aria-label="Breadcrumbs">
+        <nav aria-label="Breadcrumbs" className="mb-6 md:mt-4 md:mb-10">
             <ol className={"flex flex-wrap items-center gap-1 text-sm"}>
                 <li>
                     <Link href={"/"} className={"text-foreground/60 hover:text-primary-500"}>
