@@ -60,7 +60,7 @@ export function SpecialCargoContents() {
                         {features.map((item) => (
                             <li key={item.title}
                                 className="flex h-full flex-col overflow-hidden bg-white/20 shadow-sm border border-foreground/10">
-                                <div className="relative aspect-3/2 w-full">
+                                <div className="relative aspect-video md:aspect-3/2 w-full">
                                     <Image
                                         src={item.image} alt={item.title}
                                         fill
