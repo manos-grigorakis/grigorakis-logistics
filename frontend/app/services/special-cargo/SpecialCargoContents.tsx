@@ -17,7 +17,7 @@ export function SpecialCargoContents() {
                     <div>
                         <span className="text-xs uppercase text-foreground/70">υπηρεσιες μεταφορας</span>
                         <h1 className="text-4xl mb-3 font-bold">
-                            <span className="text-primary-500">Ειδική</span> Μεταφορά
+                            <span className="text-primary-500">Ειδικές</span> Μεταφορές
                         </h1>
 
                         <p className="max-w-xl leading-relaxed text-foreground/70">

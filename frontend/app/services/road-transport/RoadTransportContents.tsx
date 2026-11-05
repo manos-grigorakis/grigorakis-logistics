@@ -38,7 +38,7 @@ export function RoadTransportContents() {
                     <div className="relative w-full aspect-3/2 max-w-lg md:justify-self-end overflow-hidden">
                         <Image
                             src="/fleet/parked-truck.webp"
-                            alt="Φορτηγό της Γρηγοράκης Μεταφορικής που μεταφέρει container"
+                            alt="Φορτηγό της Γρηγοράκης Μεταφορικής σε δρομολόγιο"
                             fill
                             priority
                             sizes="(max-width: 1024px) 100vw, 40vw"

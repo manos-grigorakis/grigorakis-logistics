@@ -36,7 +36,7 @@ export function StorageContents() {
                     <div className="relative w-full aspect-3/2 max-w-lg md:justify-self-end overflow-hidden">
                         <Image
                             src="/services/warehouse_storage.webp"
-                            alt=""
+                            alt="Παλέτες και εμπορεύματα σε χώρο αποθήκευσης"
                             fill
                             priority
                             sizes="(max-width: 1024px) 100vw, 40vw"

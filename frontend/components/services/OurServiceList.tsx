@@ -9,7 +9,7 @@ type Props = {
 export function OurServiceList({currentServiceRoute}: Props) {
     return (
         <div>
-            <h2 className="text-2xl mb-4 font-semibold">Δείτε και τις υπόλοιπες υπηρεσίας μας</h2>
+            <h2 className="text-2xl mb-4 font-semibold">Δείτε και τις υπόλοιπες υπηρεσίες μας</h2>
             <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {servicesLinks.filter((service) => service.href !== currentServiceRoute)
                     .map((service) => (
