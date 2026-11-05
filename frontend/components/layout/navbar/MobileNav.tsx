@@ -5,6 +5,7 @@ import {AnimatePresence, m} from "framer-motion";
 import {navLinks} from "@/data/nav-links";
 import Logo from "@/public/logo.webp";
 import {MobileServicesDropdown} from "./MobileServicesDropdown";
+import {LuPhone} from "react-icons/lu";
 
 type Props = {
     isOpen: boolean;
@@ -13,6 +14,7 @@ type Props = {
 
 export function MobileNav({isOpen, setIsOpen}: Props) {
     const closeMenu = () => setIsOpen(false);
+    const barBase = "absolute left-3 right-3 h-0.5 bg-current transition-all duration-300";
 
     // Detects scroll event
     useEffect(() => {
@@ -48,31 +50,32 @@ export function MobileNav({isOpen, setIsOpen}: Props) {
                     />
                 </Link>
 
-                {/* Menu & Close Icon */}
-                <button
-                    type="button"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label={isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
-                    aria-expanded={isOpen}
-                    aria-controls={"mobile-navigation"}
-                    className="relative w-10 h-10 hover:cursor-pointer"
-                >
-          <span
-              className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-300 ${
-                  isOpen ? "top-1/2 rotate-45" : "top-3"
-              }`}
-          />
-                    <span
-                        className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-300 ${
-                            isOpen ? "opacity-0" : "top-1/2"
-                        }`}
-                    />
-                    <span
-                        className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-300 ${
-                            isOpen ? "top-1/2 -rotate-45" : "bottom-3"
-                        }`}
-                    />
-                </button>
+                {/* CTA */}
+                <div className="flex items-center gap-2">
+                    <a
+                        href="tel:+306973392007"
+                        onClick={closeMenu}
+                        aria-label="Καλέστε μας"
+                        className="flex size-11 items-center justify-center border border-foreground transition-colors hover:bg-foreground hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                    >
+                        <LuPhone className="size-5"/>
+                    </a>
+
+                    {/* Menu & Close Icon */}
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label={isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
+                        aria-expanded={isOpen}
+                        aria-controls={"mobile-navigation"}
+                        className="relative size-11 hover:cursor-pointer"
+                    >
+                        <span className={`${barBase} ${isOpen ? "top-5.25 rotate-45" : "top-3.5"}`}/>
+                        <span className={`${barBase} top-5.25 ${isOpen ? "opacity-0" : ""}`}/>
+                        <span className={`${barBase} ${isOpen ? "top-5.25 -rotate-45" : "top-7"}`}/>
+                    </button>
+                </div>
+
             </div>
 
             {/* Mobile dropdown */}
