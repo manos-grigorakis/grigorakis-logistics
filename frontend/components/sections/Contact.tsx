@@ -1,98 +1,118 @@
 "use client";
 
-import { m } from "framer-motion";
+import {m} from "framer-motion";
 import ContactForm from "../forms/ContactForm";
 
 export default function Contact() {
-  return (
-    <section id="contact" className="px-4 py-24 text-white bg-primary-700">
-      <m.div
-        className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl"
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <div>
-          <span className="text-xs tracking-widest uppercase text-[ccc]">
+    return (
+        <section id="contact" className="px-4 py-24 text-white bg-primary-700">
+            <m.div
+                className="flex flex-col gap-24 mx-auto min-[950px]:gap-32 min-[950px]:flex-row max-w-7xl"
+                initial={{opacity: 0, x: -30}}
+                whileInView={{opacity: 1, x: 0}}
+                transition={{duration: 0.7, ease: "easeOut"}}
+                viewport={{once: true}}
+            >
+                <div>
+          <span className="text-xs tracking-widest uppercase text-[#ccc]">
             επικοινωνια
           </span>
 
-          <h2 className="mt-2 mb-4 text-4xl font-semibold uppercase">
-            ζητηστε προσφορα σημερα
-          </h2>
+                    <h2 className="mt-2 mb-4 text-4xl font-semibold uppercase">
+                        ζητηστε προσφορα σημερα
+                    </h2>
 
-          <p className="max-w-md leading-relaxed text-white/90">
-            Ζητήστε δωρεάν προσφορά ή καλέστε μας απευθείας. Απαντάμε σε όλα τα
-            αιτήματα εντός μίας εργάσιμης ημέρας.
-          </p>
+                    <p className="max-w-md leading-relaxed text-white/90">
+                        Ζητήστε δωρεάν προσφορά ή καλέστε μας απευθείας. Απαντάμε σε όλα τα
+                        αιτήματα εντός μίας εργάσιμης ημέρας.
+                    </p>
 
-          {/* Info */}
-          <ul className="mt-12">
-            <m.li
-              className="py-4 border-b border-white/40"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <span className="text-lg font-medium uppercase font-heading text-white/80">
-                email
-              </span>
+                    {/* Info */}
+                    <div data-nosnippet>
+                        <ul className="mt-12">
+                            <m.li
+                                className="py-4 border-b border-white/40"
+                                initial={{opacity: 0, x: -20}}
+                                whileInView={{opacity: 1, x: 0}}
+                                transition={{duration: 0.4, delay: 0.2, ease: "easeOut"}}
+                                viewport={{once: true}}
+                            >
+                <span className="text-lg font-medium uppercase font-heading text-white/80">
+                  τηλεφωνο
+                </span>
 
-              <div className="flex flex-col gap-1">
-                <p className="hover:underline">
-                  <a href="mailto:info@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας">
-                    info@grigorakis-logistics.gr
-                  </a>
-                </p>
-                <p className="hover:underline">
-                  <a href="mailto:contact@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας">
-                    contact@grigorakis-logistics.gr
-                  </a>
-                </p>
-              </div>
-            </m.li>
+                                <a href="tel:+306973392007" className="block hover:underline">
+                                    +30 6973392007
+                                </a>
+                            </m.li>
 
-            <m.li
-              className="py-4 border-b border-white/40"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.35, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <span className="text-lg font-medium uppercase font-heading text-white/80">
-                εδρα
-              </span>
-              <p className="uppercase">ασπροπυργος θεση κουταλα, 19300</p>
-            </m.li>
+                            <m.li
+                                className="py-4 border-b border-white/40"
+                                initial={{opacity: 0, x: -20}}
+                                whileInView={{opacity: 1, x: 0}}
+                                transition={{duration: 0.4, delay: 0.35, ease: "easeOut"}}
+                                viewport={{once: true}}
+                            >
+                <span className="text-lg font-medium uppercase font-heading text-white/80">
+                  email
+                </span>
 
-            <m.li
-              className="py-4 border-b border-white/40"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <span className="text-lg font-medium uppercase font-heading text-white/80">
-                ωραριο
-              </span>
-              <p className="uppercase">δευ - παρ · 08:00 - 17:00</p>
-            </m.li>
-          </ul>
-        </div>
+                                <div className="flex flex-col gap-1">
+                                    <p className="hover:underline">
+                                        <a href="mailto:info@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας">
+                                            info@grigorakis-logistics.gr
+                                        </a>
+                                    </p>
+                                    <p className="hover:underline">
+                                        <a href="mailto:contact@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας">
+                                            contact@grigorakis-logistics.gr
+                                        </a>
+                                    </p>
+                                </div>
+                            </m.li>
 
-        {/* Form */}
-        <m.div
-          className="flex-1 overflow-hidden  px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <ContactForm />
-        </m.div>
-      </m.div>
-    </section>
-  );
+                            <m.li
+                                className="py-4 border-b border-white/40"
+                                initial={{opacity: 0, x: -20}}
+                                whileInView={{opacity: 1, x: 0}}
+                                transition={{duration: 0.4, delay: 0.5, ease: "easeOut"}}
+                                viewport={{once: true}}
+                            >
+                <span className="text-lg font-medium uppercase font-heading text-white/80">
+                  εδρα
+                </span>
+                                <a href="https://maps.app.goo.gl/gAaSxabugeHoBN7p6" target="_blank"
+                                   rel="noopener noreferrer" className="block uppercase hover:underline">ασπροπυργος
+                                    θεση κουταλα, 19300</a>
+                            </m.li>
+
+                            <m.li
+                                className="py-4 border-b border-white/40"
+                                initial={{opacity: 0, x: -20}}
+                                whileInView={{opacity: 1, x: 0}}
+                                transition={{duration: 0.4, delay: 0.65, ease: "easeOut"}}
+                                viewport={{once: true}}
+                            >
+                <span className="text-lg font-medium uppercase font-heading text-white/80">
+                  ωραριο
+                </span>
+                                <p className="uppercase">δευ - παρ · 08:00 - 17:00</p>
+                            </m.li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Form */}
+                <m.div
+                    className="flex-1 overflow-hidden  px-8 py-16 shadow-sm bg-background drop-shadow-lg text-foreground"
+                    initial={{opacity: 0, x: 30}}
+                    whileInView={{opacity: 1, x: 0}}
+                    transition={{duration: 1.5, ease: "easeOut"}}
+                    viewport={{once: true}}
+                >
+                    <ContactForm/>
+                </m.div>
+            </m.div>
+        </section>
+    );
 }
