@@ -32,7 +32,7 @@ export default function RootLayout({
         <html
             lang="el"
             data-scroll-behavior="smooth"
-            className={`${dmSans.variable} ${barlowCondensed.variable} h-full antialiased scroll-smooth`}
+            className={`${dmSans.variable} ${barlowCondensed.variable} h-full antialiased scroll-smooth scroll-pt-28 md:scroll-pt-38`}
         >
         <body className="flex flex-col min-h-full">
         <LazyMotion features={domAnimation}>
