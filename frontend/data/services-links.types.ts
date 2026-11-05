@@ -20,14 +20,12 @@ export const servicesLinks: { href: string; label: string, icon: IconType, descr
         icon: LuContainer,
         description: "Εμπορία, πώληση και μεταφορά containers από και προς λιμάνια, εργοτάξια και αποθήκες με κατάλληλα επικαθήμενα και εμπειρία στη διαχείριση βαρέων φορτίων.",
     },
-
     {
         href: '/services/special-cargo',
         label: "Ειδικές Μεταφορές",
         icon: LuForklift,
         description: "Αναλαμβάνουμε μεταφορές που απαιτούν εξειδικευμένο εξοπλισμό και εμπειρία.",
     },
-
     {
         href: '/services/relocations',
         label: "Μετακόμιση",
