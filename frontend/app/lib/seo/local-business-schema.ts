@@ -27,12 +27,6 @@ export const localBusinessJsonLd = {
         name: "Greece",
     },
 
-    parentOrganization: {
-        "@type": "Organization",
-        name: "Grigorakis Transport",
-        url: "https://grigorakis-transport.gr",
-    },
-
     sameAs: [
         "https://maps.app.goo.gl/gAaSxabugeHoBN7p6",
         "https://www.xo.gr/profile/profile-911752406/el/",
