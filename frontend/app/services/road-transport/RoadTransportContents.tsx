@@ -1,10 +1,10 @@
 import {Breadcrumbs} from "@/components/ui/Breadcrumbs";
-import Link from "next/link";
 import Image from "next/image";
 import {cities, features, locations} from "@/app/services/road-transport/road-transport.data";
 import {OurServiceList} from "@/components/services/OurServiceList";
 import {LuMapPin} from "react-icons/lu";
 import {ServiceCTA} from "@/components/services/ServiceCTA";
+import {AppLinkButton} from "@/components/ui/AppLinkButton";
 
 export function RoadTransportContents() {
     return (
@@ -28,10 +28,7 @@ export function RoadTransportContents() {
                         </p>
 
                         <div className={"mt-6"}>
-                            <Link href="/#contact"
-                                  className="px-4 py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600">
-                                Ζητήστε προσφορά
-                            </Link>
+                            <AppLinkButton/>
                         </div>
                     </div>
 

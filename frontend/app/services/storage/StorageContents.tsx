@@ -1,8 +1,8 @@
 import {Breadcrumbs} from "@/components/ui/Breadcrumbs";
-import Link from "next/link";
 import Image from "next/image";
 import {OurServiceList} from "@/components/services/OurServiceList";
 import {ServiceCTA} from "@/components/services/ServiceCTA";
+import {AppLinkButton} from "@/components/ui/AppLinkButton";
 
 export function StorageContents() {
     return (
@@ -26,10 +26,7 @@ export function StorageContents() {
                         </p>
 
                         <div className={"mt-6"}>
-                            <Link href="/#contact"
-                                  className="px-4 py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600">
-                                Ζητήστε προσφορά
-                            </Link>
+                            <AppLinkButton/>
                         </div>
                     </div>
 
