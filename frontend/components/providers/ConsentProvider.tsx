@@ -42,6 +42,20 @@ const subscribe = (callback: () => void) => {
     }
 }
 
+// Remove GA4 cookies
+const clearAnalyticsCookies = () => {
+    const cookies = document.cookie.split(";");
+
+    cookies.forEach((cookie) => {
+        const name = cookie.trim().split("=")[0];
+
+        if (name === "_ga" || name.startsWith("_ga_")) {
+            document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+            document.cookie = `${name}=; Max-Age=0; Path=/; Domain=grigorakis-logistics.gr; SameSite=Lax`;
+        }
+    })
+}
+
 const ConsentContext = createContext<ConsentContextType | null>(null);
 
 export function ConsentProvider({children}: { children: ReactNode }) {
@@ -53,6 +67,20 @@ export function ConsentProvider({children}: { children: ReactNode }) {
 
     // Save consent and notify subscribers
     const setConsent = (value: Exclude<ConsentStatus, null>) => {
+        const previousConsent = localStorage.getItem(STORAGE_KEY);
+
+        // Reload when analytics consent is revoked
+        if (previousConsent === 'accepted' && value === 'rejected') {
+            localStorage.setItem(STORAGE_KEY, value);
+
+            // Disable GA4
+            Object.assign(window, {"ga-disable-G-YL947VHQXY": true});
+
+            clearAnalyticsCookies()
+            window.location.reload()
+            return
+        }
+
         localStorage.setItem(STORAGE_KEY, value);
         window.dispatchEvent(new Event(CHANGE_EVENT))
         setSettingsOpen(false);
