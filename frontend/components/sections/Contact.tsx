@@ -2,6 +2,7 @@
 
 import {m} from "framer-motion";
 import ContactForm from "../forms/ContactForm";
+import {sendGAEvent} from "@next/third-parties/google";
 
 export default function Contact() {
     return (
@@ -41,7 +42,10 @@ export default function Contact() {
                   τηλεφωνο
                 </span>
 
-                                <a href="tel:+306973392007" className="block hover:underline">
+                                <a href="tel:+306973392007" onClick={() => sendGAEvent("event", "contact_click", {
+                                    contact_method: "phone",
+                                    click_location: "contact_section"
+                                })} className="block hover:underline">
                                     +30 6973392007
                                 </a>
                             </m.li>
@@ -59,12 +63,20 @@ export default function Contact() {
 
                                 <div className="flex flex-col gap-1">
                                     <p className="hover:underline">
-                                        <a href="mailto:info@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας">
+                                        <a href="mailto:info@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας"
+                                           onClick={() => sendGAEvent("event", "contact_click", {
+                                               contact_method: "email",
+                                               click_location: "contact_section"
+                                           })}>
                                             info@grigorakis-logistics.gr
                                         </a>
                                     </p>
                                     <p className="hover:underline">
-                                        <a href="mailto:contact@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας">
+                                        <a href="mailto:contact@grigorakis-logistics.gr?subject=Αίτημα%20Επικοινωνίας"
+                                           onClick={() => (sendGAEvent("event", "contact_click", {
+                                               contact_method: "email",
+                                               click_location: "contact_section"
+                                           }))}>
                                             contact@grigorakis-logistics.gr
                                         </a>
                                     </p>
