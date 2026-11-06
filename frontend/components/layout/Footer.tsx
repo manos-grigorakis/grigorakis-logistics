@@ -6,8 +6,11 @@ import Logo from "@/public/logo.webp";
 import Image from "next/image";
 import Link from "next/link";
 import {servicesLinks} from "@/data/services-links.types";
+import {sendGAEvent} from "@next/third-parties/google";
+import {useConsent} from "@/components/providers/ConsentProvider";
 
 export default function Footer() {
+    const {openSettings} = useConsent();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -129,18 +132,30 @@ export default function Footer() {
                     <div className="flex flex-col gap-2 mb-8 text-sm text-white/50">
                         <a
                             href="tel:+306973392007"
+                            onClick={() => sendGAEvent("event", "contact_click", {
+                                contact_method: "phone",
+                                click_location: "footer"
+                            })}
                             className="transition-colors hover:text-primary-500"
                         >
                             +30 6973392007
                         </a>
                         <a
                             href="mailto:info@grigorakis-logistics.gr"
+                            onClick={() => sendGAEvent("event", "contact_click", {
+                                contact_method: "email",
+                                click_location: "footer"
+                            })}
                             className="transition-colors hover:text-primary-500"
                         >
                             info@grigorakis-logistics.gr
                         </a>
                         <a
                             href="mailto:contact@grigorakis-logistics.gr"
+                            onClick={() => sendGAEvent("event", "contact_click", {
+                                contact_method: "email",
+                                click_location: "footer"
+                            })}
                             className="transition-colors hover:text-primary-500"
                         >
                             contact@grigorakis-logistics.gr
@@ -161,9 +176,22 @@ export default function Footer() {
             {/* Bottom */}
             <div
                 className="flex flex-col items-center justify-between max-w-6xl gap-2 mx-auto mt-6 text-xs md:flex-row text-white/60">
-                <p className="mb-2">
-                    © {currentYear} Γρηγοράκης Μεταφορική. All rights reserved
-                </p>
+                <div className="flex flex-col items-center gap-3 md:flex-row md:gap-4">
+                    <p className="mb-0">
+                        © {currentYear} Γρηγοράκης Μεταφορική. All rights reserved
+                    </p>
+
+                    <div className="flex items-center gap-3">
+                        <Link href="/privacy-policy"
+                              className="transition-colors hover:text-white hover:underline">Πολιτική Απορρήτου</Link>
+
+                        <button type="button" onClick={openSettings}
+                                className="transition-colors hover:text-white hover:underline hover:cursor-pointer">Ρυθμίσεις
+                            Cookies
+                        </button>
+                    </div>
+                </div>
+
                 <p>
                     Built by{" "}
                     <a
