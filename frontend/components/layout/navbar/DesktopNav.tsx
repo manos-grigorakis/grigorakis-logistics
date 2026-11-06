@@ -7,6 +7,7 @@ import {navLinks} from "@/data/nav-links";
 import {m} from "framer-motion";
 import {DesktopServicesDropdown} from "./DesktopServicesDropdown";
 import {LuPhone} from "react-icons/lu";
+import {sendGAEvent} from "@next/third-parties/google";
 
 export function DesktopNav() {
     return (
@@ -60,6 +61,10 @@ export function DesktopNav() {
                 <a
                     href="tel:+306973392007"
                     className="flex items-center gap-2 px-3 py-2 text-sm font-medium leading-5 uppercase transition-colors border border-foreground text-foreground hover:bg-foreground hover:text-white"
+                    onClick={() => sendGAEvent("event", "contact_click", {
+                        contact_method: "phone",
+                        click_location: "navbar"
+                    })}
                 >
                     <LuPhone className="size-4"/>
                     <span className="hidden xl:inline">Καλέστε μας</span>
@@ -69,6 +74,9 @@ export function DesktopNav() {
                 <Link
                     href={"/#contact"}
                     className="block px-3 py-2 border border-foreground text-sm font-medium leading-5 text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
+                    onClick={() => sendGAEvent("event", "quote_click", {
+                        click_location: "navbar"
+                    })}
                 >
                     προσφορα
                 </Link>

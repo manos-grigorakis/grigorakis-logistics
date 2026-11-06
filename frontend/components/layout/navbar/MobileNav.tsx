@@ -6,6 +6,7 @@ import {navLinks} from "@/data/nav-links";
 import Logo from "@/public/logo.webp";
 import {MobileServicesDropdown} from "./MobileServicesDropdown";
 import {LuPhone} from "react-icons/lu";
+import {sendGAEvent} from "@next/third-parties/google";
 
 type Props = {
     isOpen: boolean;
@@ -57,7 +58,14 @@ export function MobileNav({isOpen, setIsOpen}: Props) {
                 <div className="flex items-center gap-2">
                     <a
                         href="tel:+306973392007"
-                        onClick={closeMenu}
+                        onClick={() => {
+                            sendGAEvent("event", "contact_click", {
+                                contact_method: "phone",
+                                click_location: "mobile_navbar"
+                            });
+
+                            closeMenu();
+                        }}
                         aria-label="Καλέστε μας"
                         className="flex size-11 items-center justify-center border border-foreground transition-colors hover:bg-foreground hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
                     >
@@ -122,7 +130,13 @@ export function MobileNav({isOpen, setIsOpen}: Props) {
                                 <li className={"mt-2"}>
                                     <Link
                                         href={"/#contact"}
-                                        onClick={closeMenu}
+                                        onClick={() => {
+                                            sendGAEvent("event", "quote_click", {
+                                                click_location: "mobile_navbar"
+                                            });
+
+                                            closeMenu()
+                                        }}
                                         className="block w-full px-3 py-2 text-sm font-medium text-center text-white uppercase transition-colors bg-foreground hover:bg-foreground/80"
                                     >
                                         προσφορα
