@@ -40,12 +40,12 @@ export function DesktopNav() {
                         {link.section === "services" ? (
                             <DesktopServicesDropdown title={link.name}/>
                         ) : (
-                            <Link
+                            <a
                                 href={`/#${link.section}`}
                                 className="block py-2 transition-colors hover:text-primary-600"
                             >
                                 {link.name}
-                            </Link>
+                            </a>
                         )}
                     </m.li>
                 ))}
@@ -71,7 +71,7 @@ export function DesktopNav() {
                     <span className="sr-only xl:hidden">Καλέστε μας</span>
                 </a>
 
-                <Link
+                <a
                     href={"/#contact"}
                     className="block px-3 py-2 border border-foreground text-sm font-medium leading-5 text-center text-white uppercase transition-colors bg-foreground hover:cursor-pointer hover:bg-foreground/80"
                     onClick={() => sendGAEvent("event", "quote_click", {
@@ -79,7 +79,7 @@ export function DesktopNav() {
                     })}
                 >
                     προσφορα
-                </Link>
+                </a>
             </m.div>
         </div>
     );
