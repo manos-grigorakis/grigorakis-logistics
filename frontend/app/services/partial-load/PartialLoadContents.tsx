@@ -83,7 +83,7 @@ export function PartialLoadContents() {
                             <div
                                 className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-2 mb-2 sm:mb-0">
                                 <h3 className="text-lg font-semibold sm:mb-2">Πλήρης φόρτωση</h3>
-                                <span className="text-xs text-foreground/40 leading-relaxed">
+                                <span className="text-xs text-foreground/60 leading-relaxed">
                                     Το φορτηγό διατίθεται αποκλειστικά για τη δική σας αποστολή.
                                 </span>
                             </div>
@@ -102,7 +102,7 @@ export function PartialLoadContents() {
                             <div
                                 className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-2 mb-2 sm:mb-0">
                                 <h3 className="text-lg font-semibold sm:mb-2">Μερική φόρτωση (LTL)</h3>
-                                <span className="text-xs text-foreground/40 leading-relaxed">
+                                <span className="text-xs text-foreground/60 leading-relaxed">
                                     Το φορτίο συνδυάζεται με άλλες αποστολές σε κοινή διαδρομή.
                                 </span>
                             </div>
