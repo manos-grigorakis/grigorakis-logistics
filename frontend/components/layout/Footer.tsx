@@ -115,8 +115,8 @@ export default function Footer() {
                             <li
                                 key={link.name}>
 
-                                <Link href={`/#${link.section}`}
-                                      className="inline-block transition-colors text-white/50 hover:text-primary-500">{link.name}</Link>
+                                <a href={`/#${link.section}`}
+                                   className="inline-block transition-colors text-white/50 hover:text-primary-500">{link.name}</a>
                             </li>
                         ))}
                     </ul>

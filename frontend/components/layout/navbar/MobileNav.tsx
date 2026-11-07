@@ -116,19 +116,19 @@ export function MobileNav({isOpen, setIsOpen}: Props) {
                                                 onNavigate={closeMenu}
                                             />
                                         ) : (
-                                            <Link
+                                            <a
                                                 href={`/#${link.section}`}
                                                 onClick={closeMenu}
                                                 className="block py-3 transition-colors hover:text-primary-600"
                                             >
                                                 {link.name}
-                                            </Link>
+                                            </a>
                                         )}
                                     </m.li>
                                 ))}
 
                                 <li className={"mt-2"}>
-                                    <Link
+                                    <a
                                         href={"/#contact"}
                                         onClick={() => {
                                             sendGAEvent("event", "quote_click", {
@@ -140,7 +140,7 @@ export function MobileNav({isOpen, setIsOpen}: Props) {
                                         className="block w-full px-3 py-2 text-sm font-medium text-center text-white uppercase transition-colors bg-foreground hover:bg-foreground/80"
                                     >
                                         προσφορα
-                                    </Link>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
