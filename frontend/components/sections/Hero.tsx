@@ -1,127 +1,78 @@
 "use client";
 
-import {m} from "framer-motion";
+import {useSyncExternalStore} from "react";
 import CountUp from "react-countup";
 import {sendGAEvent} from "@next/third-parties/google";
 
+const subscribe = () => () => {
+};
+
 export default function Hero() {
+    // false on the server and during hydration, true right after
+    const hydrated = useSyncExternalStore(subscribe, () => true, () => false)
+
     const stats: { header: number; symbol: string; value: string }[] = [
         {header: 35, symbol: "+", value: "έτη εμπειρίας"},
         {header: 30, symbol: "K +", value: "παραδόσεις"},
         {header: 99, symbol: "%", value: "έγκαιρες παραδόσεις"},
     ];
 
-    // Animations
-    const line = {
-        hidden: {opacity: 0, y: 30},
-        show: {opacity: 1, y: 0, transition: {duration: 0.6}},
-    };
-
-    const container = {
-        hidden: {},
-        show: {transition: {staggerChildren: 0.15}},
-    };
-
     return (
         <section className="relative flex items-center justify-around px-4 overflow-hidden min-h-screen">
             {/* Background */}
-            <m.div
-                className="absolute z-0 pointer-events-none inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"
-                initial={{opacity: 0.6}}
-                animate={{
-                    opacity: 1,
-                    transition: {duration: 1},
-                }}
+            <div
+                className="absolute z-0 pointer-events-none inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] hero-grid"
             />
 
             <div className="flex flex-col items-center justify-center text-center">
-                <m.span
-                    className="text-sm tracking-wider uppercase"
-                    initial={{opacity: 0, y: -10}}
-                    animate={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {duration: 0.4, ease: "easeOut"},
-                    }}
+                <span
+                    className="text-sm tracking-wider uppercase hero-in [--hero-y:-10px] [--hero-duration:0.4s]"
                 >
                     ~ εθνικες μεταφορες ~
-                </m.span>
+                </span>
 
-                <m.h1
-                    className="max-w-2xl mt-2 mb-10 text-4xl font-bold leading-tight md:text-7xl"
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                >
-                    <m.span variants={line} className="block">
+                <h1 className="max-w-2xl mt-2 mb-10 text-4xl font-bold leading-tight md:text-7xl">
+                    <span className="block hero-in [--hero-y:30px]">
                         Από άκρη σε άκρη της
-                    </m.span>
-                    <m.span variants={line} className="block text-primary-500">
+                    </span>
+                    <span className="block text-primary-500 hero-in [--hero-y:30px] [--hero-delay:0.15s]">
                         Ελλάδας
-                    </m.span>
-                </m.h1>
+                    </span>
+                </h1>
 
-                <m.p
-                    className="max-w-md text-foreground/70"
-                    initial={{opacity: 0, y: 20}}
-                    animate={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {duration: 0.8, delay: 0.6, ease: "easeOut"},
-                    }}
-                >
+                <p className="max-w-md text-foreground/70 hero-in [--hero-y:20px] [--hero-duration:0.8s] [--hero-delay:0.6s]">
                     Η μεταφορική εταιρία{" "}
                     <span className="font-bold text-primary-500">Γρηγοράκης</span> στον
                     Ασπρόπυργο αναλαμβάνει μεταφορές και υπηρεσίες logistics σε όλη την
                     Ελλάδα, με συνέπεια, ασφάλεια και άμεση εξυπηρέτηση.
-                </m.p>
+                </p>
 
                 {/* CTA */}
                 <div className="flex flex-wrap justify-center gap-4 mt-8 mb-10">
-                    <m.a
-                        href="#contact"
-                        onClick={() => sendGAEvent("event", "quote_click", {click_location: "home_hero"})}
-                        className="px-5 block py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600"
-                        initial={{x: -40, opacity: 0}}
-                        animate={{
-                            x: 0,
-                            opacity: 1,
-                            transition: {duration: 0.6, delay: 0.5, ease: "backOut"},
-                        }}
+                    <a href="#contact"
+                       onClick={() => sendGAEvent("event", "quote_click", {click_location: "home_hero"})}
+                       className="px-5 block py-4 text-sm font-medium leading-5 text-white transition-colors duration-200 uppercase bg-primary-500 hover:cursor-pointer hover:bg-primary-600 hero-in [--hero-x:-40px] [--hero-delay:0.5s] [--hero-ease:cubic-bezier(0.33,1.53,0.69,0.99)]"
                     >
                         Ζητηστε προσφορα
-                    </m.a>
+                    </a>
 
-                    <m.a
-                        href="#services"
-                        className="px-5 block py-4 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer"
-                        initial={{x: 40, opacity: 0}}
-                        animate={{
-                            x: 0,
-                            opacity: 1,
-                            transition: {duration: 0.6, delay: 0.5, ease: "backOut"},
-                        }}
-                    >
+                    <a href="#services"
+                       className="px-5 block py-4 text-sm font-medium leading-5 uppercase border-2 transition-colors duration-200 border-primary-500 text-foreground hover:bg-foreground hover:border-foreground hover:text-white hover:cursor-pointer hero-in [--hero-x:40px] [--hero-delay:0.5s] [--hero-ease:cubic-bezier(0.33,1.53,0.69,0.99)]">
                         Δειτε υπηρεσιες
-                    </m.a>
+                    </a>
                 </div>
 
                 {/* Stats */}
                 <div className="flex flex-col items-center gap-4 sm:flex-row">
                     {stats.map((item, index) => (
-                        <m.div
+                        <div
                             key={item.header}
-                            className="flex items-center"
-                            initial={{opacity: 0, y: 20}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{
-                                duration: 0.6,
-                                delay: 0.8 + index * 0.15,
-                                ease: "easeOut",
-                            }}
+                            className={`flex items-center ${hydrated ? "hero-in [--hero-y:20px]" : "opacity-0"}`}
+                            style={{animationDelay: `${0.8 + index * 0.15}s`}}
                         >
                             {index !== 0 && (
-                                <div className="hidden w-px h-8 mx-4 sm:block md:mx-8 bg-foreground/30"/>
+                                <div className="hidden w-px h-8 mx-4 sm:block md:mx-8 bg-foreground/30"
+                                />
                             )}
 
                             <div className="text-center capitalize">
@@ -139,7 +90,7 @@ export default function Hero() {
                                     {item.value}
                                 </p>
                             </div>
-                        </m.div>
+                        </div>
                     ))}
                 </div>
             </div>
