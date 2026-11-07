@@ -1,8 +1,8 @@
 "use client";
 
 import {m} from "framer-motion";
-import ContactForm from "../forms/ContactForm";
 import {sendGAEvent} from "@next/third-parties/google";
+import {ContactForm} from "@/components/forms/ContactForm";
 
 export default function Contact() {
     return (
